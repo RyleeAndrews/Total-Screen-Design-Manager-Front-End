@@ -7,17 +7,18 @@ class Home extends React.Component {
 
     this.pageToggle = this.pageToggle.bind(this);
     this.state = {
-      intro: true,
+      entry: true,
+      main: false,
     };
   }
   pageToggle(event){
     event.preventDefault();
-    this.setState({intro: !this.state.intro});
+    this.setState({entry: !this.state.entry, main: !this.state.main});
   }
   render(){
     return(
       <div>
-        {this.state.intro ? (
+        {this.state.entry ? (
           <div className="frontDiv">
             <img className="frontPhoto" src={require('./frontPhoto.jpg')}/>
             <button type="submit" className="frontButton" onClick={this.pageToggle}> click me </button>
@@ -58,6 +59,13 @@ class Home extends React.Component {
             </div>
           </div>
         ) : null
+        }
+        {
+          this.state.main ? (
+            <div className="main">
+            hey
+            </div>
+          ) : null
         }
       </div>
     );

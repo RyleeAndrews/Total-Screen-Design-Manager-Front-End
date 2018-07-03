@@ -1,17 +1,20 @@
+
+
 .frontPhoto {
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
   filter: blur(8px) grayscale(40%);
 }
 
 .frontDiv {
   position: relative;
   width: 100%;
+  border: 8px solid black;
 }
 
 .frontDiv .frontButton {
   position: absolute;
-  top: 65%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -36,19 +39,20 @@
   position: absolute;
   top: 15%;
   color: black;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
   line-height: 150%;
-  font-size: 1.2em;
+  font-size: 1.5em;
   text-align: center;
 }
 
 .screenprint {
   position: absolute;
   top: 44%;
-  left: 46.5%;
+  left: 45%;
   color: black;
   text-decoration: none;
+  font-size: 1.4em;
 }
 
 .screendiv a:hover {
@@ -57,10 +61,11 @@
 
 .dtg {
   position: absolute;
-  top: 47%;
-  left: 45%;
+  top: 50%;
+  left: 42%;
   color: black;
   text-decoration: none;
+  font-size: 1.4em;
 }
 
 .dtgdiv a:hover {
@@ -69,10 +74,11 @@
 
 .embroidered {
   position: absolute;
-  top: 50%;
-  left: 47%;
+  top: 56%;
+  left: 46%;
   color: black;
   text-decoration: none;
+  font-size: 1.4em;
 }
 
 .embroidereddiv a:hover {
@@ -81,10 +87,11 @@
 
 .vinyl {
   position: absolute;
-  top: 53%;
-  left: 47%;
+  top: 62%;
+  left: 45.7%;
   color: black;
   text-decoration: none;
+  font-size: 1.4em;
 }
 
 .vinyldiv a:hover {
@@ -93,12 +100,127 @@
 
 .graphicdesign {
   position: absolute;
-  top: 56%;
-  left: 45%;
+  top: 68%;
+  left: 45.5%;
   color: black;
   text-decoration: none;
+  font-size: 1.4em;
 }
 
 .graphicdesigndiv a:hover {
   color: blue;
+}
+
+@media only screen and (max-width: 1320px){
+  .mission {
+    font-size: 1.5em
+  }
+
+  .screenprint {
+    top: 50%;
+  }
+
+  .dtg {
+    top: 54%;
+  }
+
+  .embroidered {
+    top: 58%;
+  }
+
+  .vinyl {
+    top: 62%;
+  }
+
+  .graphicdesign {
+    top: 66%;
+  }
+
+  .frontDiv .frontButton {
+    top: 90%;
+  }
+}
+
+@media only screen and (max-width: 1220px){
+  .mission {
+    font-size: 1.1em;
+  }
+
+  .screenprint {
+    top: 51%;
+    left: 45%;
+  }
+
+  .dtg {
+    top: 55%;
+    left: 41%;
+  }
+
+  .embroidered {
+    top: 59%;
+    left: 46%;
+  }
+
+  .vinyl {
+    top: 63%;
+    left: 46%;
+  }
+
+  .graphicdesign {
+    top: 67%;
+    left: 45.5%;
+  }
+
+  .frontDiv .frontButton {
+    top: 80%;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .mission {
+    font-size: .01em;
+    margin-bottom: 10%;
+  }
+
+  .frontPhoto {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .screenprint {
+    font-size: .01em;
+    top: 55%;
+    left: 42%;
+  }
+
+  .words {
+    font-size: 1em;
+    right: 35%;
+  }
+
+  .frontDiv .frontButton {
+    top: 90%;
+    left: 50%;
+  }
+
+  .dtg {
+    font-size: .01em;
+    top: 60%;
+    left: 35.5%;
+  }
+
+  .embroidered {
+    font-size: .01em;
+    top: 65%;
+  }
+
+  .vinyl {
+    font-size: .01em;
+    top: 70%;
+  }
+
+  .graphicdesign {
+    font-size: .01em;
+    top: 75%;
+  }
 }
