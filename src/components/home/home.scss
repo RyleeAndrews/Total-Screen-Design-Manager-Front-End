@@ -189,7 +189,7 @@
   }
 
   .frontDiv .frontButton {
-    top: 80%;
+    top: 90%;
     left: 50%;
   }
 }
@@ -199,6 +199,7 @@
   .words {
     margin-left: 25%;
     margin-right: 25%;
+    top: 3%;
   }
 
   .mission {
@@ -211,38 +212,251 @@
   }
 
   .dtg {
-    top: 57%;
+    top: 59%;
     left: 33%;
   }
 
   .embroidered {
-    top: 61%;
+    top: 65%;
     left: 41.5%;
   }
 
   .vinyl {
-    top: 65%;
+    top: 71%;
     left: 41%;
   }
 
   .graphicdesign {
-    top: 69%;
+    top: 77%;
     left: 40%;
   }
 
   .frontDiv .frontButton {
+    top: 93%;
+    left: 50%;
+  }
+}
+
+@media only screen and (max-width: 800px){
+
+    .words {
+      width: 30%;
+      left: 10%;
+    }
+
+    .mission {
+      font-size: 1em;
+      margin-bottom: 10%;
+      top: 22%;
+    }
+
+    .frontPhoto {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .screenprint {
+      font-size: 1em;
+      top: 57%;
+      left: 40%;
+    }
+
+    .frontDiv .frontButton {
+      top: 95%;
+      left: 50%;
+    }
+
+    .dtg {
+      font-size: 1em;
+      top: 62%;
+      left: 35.5%;
+    }
+
+    .embroidered {
+      font-size: 1em;
+      top: 67%;
+    }
+
+    .vinyl {
+      font-size: 1em;
+      top: 72%;
+    }
+
+    .graphicdesign {
+      font-size: 1em;
+      top: 77%;
+    }
+}
+
+@media only screen and (max-width: 720px){
+  .words {
+    width: 30%;
+    left: 10%;
+    top: 1%;
+  }
+
+  .mission {
+    font-size: 1em;
+    margin-bottom: 10%;
+    top: 26%;
+  }
+
+  .frontPhoto {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .screenprint {
+    font-size: 1em;
+    top: 65%;
+    left: 41%;
+  }
+
+  .frontDiv .frontButton {
+    top: 95%;
+    left: 49%;
+  }
+
+  .dtg {
+    font-size: 1em;
+    top: 70%;
+    left: 33.5%;
+  }
+
+  .embroidered {
+    font-size: 1em;
+    top: 75%;
+    left: 43.5%;
+  }
+
+  .vinyl {
+    font-size: 1em;
     top: 80%;
-    left: 51%;
+    left: 42%;
+  }
+
+  .graphicdesign {
+    font-size: 1em;
+    top: 85%;
+    left: 40.5%;
+  }
+}
+
+@media only screen and (max-width: 665px){
+  .words {
+    width: 30%;
+    left: 10%;
+    top: 1%;
+  }
+
+  .mission {
+    font-size: .8em;
+    margin-bottom: 10%;
+    top: 23%;
+  }
+
+  .frontPhoto {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .screenprint {
+    font-size: 1em;
+    top: 65%;
+    left: 38%;
+  }
+
+  .frontDiv .frontButton {
+    top: 95%;
+    left: 49%;
+  }
+
+  .dtg {
+    font-size: 1em;
+    top: 70%;
+    left: 30.5%;
+  }
+
+  .embroidered {
+    font-size: 1em;
+    top: 75%;
+    left: 40.5%;
+  }
+
+  .vinyl {
+    font-size: 1em;
+    top: 80%;
+    left: 39%;
+  }
+
+  .graphicdesign {
+    font-size: 1em;
+    top: 85%;
+    left: 37.5%;
+  }
+}
+
+@media only screen and (max-width: 620px){
+  .words {
+    width: 30%;
+    left: 10%;
+    top: 1%;
+  }
+
+  .mission {
+    font-size: .8em;
+    margin-bottom: 10%;
+    top: 23%;
+  }
+
+  .frontPhoto {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .screenprint {
+    font-size: 1em;
+    top: 65%;
+    left: 38%;
+  }
+
+  .frontDiv .frontButton {
+    top: 95%;
+    left: 49%;
+  }
+
+  .dtg {
+    font-size: 1em;
+    top: 70%;
+    left: 30.5%;
+  }
+
+  .embroidered {
+    font-size: 1em;
+    top: 75%;
+    left: 40.5%;
+  }
+
+  .vinyl {
+    font-size: 1em;
+    top: 80%;
+    left: 39%;
+  }
+
+  .graphicdesign {
+    font-size: 1em;
+    top: 85%;
+    left: 37.5%;
   }
 }
 
 @media only screen and (max-width: 475px) {
 
   .words {
-    width: 30%;
-    left: 10%;
-
+    font-size: 1em;
+    right: 35%;
   }
+
 
   .mission {
     font-size: .01em;
@@ -260,11 +474,6 @@
     left: 42%;
   }
 
-  .words {
-    font-size: 1em;
-    right: 35%;
-  }
-
   .frontDiv .frontButton {
     top: 90%;
     left: 50%;
@@ -279,15 +488,18 @@
   .embroidered {
     font-size: .01em;
     top: 65%;
+    left: 43.5%;
   }
 
   .vinyl {
     font-size: .01em;
     top: 70%;
+    left: 43%;
   }
 
   .graphicdesign {
     font-size: .01em;
     top: 75%;
+    left: 42.5%;
   }
 }

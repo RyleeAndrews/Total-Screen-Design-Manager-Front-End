@@ -22,7 +22,7 @@ class App extends React.Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/screenprint' component={ScreenPrint} />
           <Route exact path='/dtg' component={DTG} />
-          <Route exact path='/embroidered' component={Embroidered} />
+          <Route exact path='/embroidery' component={Embroidered} />
           <Route exact path="/vinyl" component={Vinyl} />
           <Route exact path="/graphicdesign" component={GraphicDesign} />
         </main>
