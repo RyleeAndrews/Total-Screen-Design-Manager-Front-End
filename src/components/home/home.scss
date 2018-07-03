@@ -31,6 +31,7 @@
   position: absolute;
   top: 5%;
   margin-left: 37%;
+  margin-right: 37%;
   text-align: center;
   color: black;
 }
@@ -61,7 +62,7 @@
 
 .dtg {
   position: absolute;
-  top: 56%;
+  top: 58%;
   left: 42%;
   color: black;
   text-decoration: none;
@@ -74,7 +75,7 @@
 
 .embroidered {
   position: absolute;
-  top: 62%;
+  top: 64%;
   left: 46%;
   color: black;
   text-decoration: none;
@@ -87,7 +88,7 @@
 
 .vinyl {
   position: absolute;
-  top: 68%;
+  top: 70%;
   left: 45.7%;
   color: black;
   text-decoration: none;
@@ -100,7 +101,7 @@
 
 .graphicdesign {
   position: absolute;
-  top: 72%;
+  top: 76%;
   left: 45.5%;
   color: black;
   text-decoration: none;
@@ -112,67 +113,126 @@
 }
 
 @media only screen and (max-width: 1320px){
+  .words {
+    margin-right: 31%;
+    margin-left: 31%;
+  }
   .mission {
     font-size: 1.5em
   }
 
   .screenprint {
-    top: 50%;
+    top: 56%;
+    left: 42%;
   }
 
   .dtg {
-    top: 54%;
+    top: 62%;
+    left: 37%;
   }
 
   .embroidered {
-    top: 58%;
+    top: 68%;
+    left: 43%;
   }
 
   .vinyl {
-    top: 62%;
+    top: 74%;
+    left: 42.5%;
   }
 
   .graphicdesign {
-    top: 66%;
+    top: 80%;
+    left: 42%;
   }
 
   .frontDiv .frontButton {
     top: 90%;
+    left: 49%;
   }
 }
 
 @media only screen and (max-width: 1220px){
+
+  .words {
+    margin-left: 31%;
+    margin-right: 31%;
+  }
+
+  .mission {
+    font-size: 1.2em;
+  }
+
+  .screenprint {
+    top: 51%;
+    left: 42.5%;
+  }
+
+  .dtg {
+    top: 55%;
+    left: 38%;
+  }
+
+  .embroidered {
+    top: 59%;
+    left: 43.5%;
+  }
+
+  .vinyl {
+    top: 63%;
+    left: 43.5%;
+  }
+
+  .graphicdesign {
+    top: 67%;
+    left: 42.5%;
+  }
+
+  .frontDiv .frontButton {
+    top: 80%;
+    left: 50%;
+  }
+}
+
+@media only screen and (max-width: 1000px){
+
+  .words {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
   .mission {
     font-size: 1.1em;
   }
 
   .screenprint {
-    top: 51%;
-    left: 45%;
+    top: 53%;
+    left: 40%;
   }
 
   .dtg {
-    top: 55%;
-    left: 41%;
+    top: 57%;
+    left: 33%;
   }
 
   .embroidered {
-    top: 59%;
-    left: 46%;
+    top: 61%;
+    left: 41.5%;
   }
 
   .vinyl {
-    top: 63%;
-    left: 46%;
+    top: 65%;
+    left: 41%;
   }
 
   .graphicdesign {
-    top: 67%;
-    left: 45.5%;
+    top: 69%;
+    left: 40%;
   }
 
   .frontDiv .frontButton {
     top: 80%;
+    left: 51%;
   }
 }
 
