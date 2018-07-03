@@ -15,7 +15,7 @@
 .frontDiv .frontButton {
   position: absolute;
   top: 90%;
-  left: 50%;
+  left: 50.5%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: #555;
@@ -237,6 +237,13 @@
 }
 
 @media only screen and (max-width: 475px) {
+
+  .words {
+    width: 30%;
+    left: 10%;
+
+  }
+
   .mission {
     font-size: .01em;
     margin-bottom: 10%;

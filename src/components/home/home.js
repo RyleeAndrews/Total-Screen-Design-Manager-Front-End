@@ -21,7 +21,7 @@ class Home extends React.Component {
         {this.state.entry ? (
           <div className="frontDiv">
             <img className="frontPhoto" src={require('./frontPhoto.jpg')}/>
-            <button type="submit" className="frontButton" onClick={this.pageToggle}> click me </button>
+            <button type="submit" className="frontButton" onClick={this.pageToggle}> continue to website </button>
             <h1 className="words"> Welcome to Total Screen Design </h1>
             <p className="mission"> Welcome to “The Best Shirts on Earth” Your Premiere Source for Advertising Apparel since 1967.
             We provide custom designed screen printing and embroidered garments for nearly every occasion.
@@ -43,8 +43,8 @@ class Home extends React.Component {
               </Link>
             </div>
             <div className="embroidereddiv">
-              <Link className="embroidered" to="/embroidered">
-                <h3> Embroidered </h3>
+              <Link className="embroidered" to="/embroidery">
+                <h3> Embroidery </h3>
               </Link>
             </div>
             <div className="vinyldiv">
