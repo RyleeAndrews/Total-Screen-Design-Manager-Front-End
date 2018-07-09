@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AuthDashboard from '../auth/authdashboard.js';
 import './home.scss';
 class Home extends React.Component {
   constructor(props){
@@ -63,7 +64,7 @@ class Home extends React.Component {
         {
           this.state.main ? (
             <div className="main">
-            hey
+              <AuthDashboard className="auth"/>
             </div>
           ) : null
         }
