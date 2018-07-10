@@ -40,8 +40,9 @@ class AuthForm extends React.Component {
     return(
       <div>
         <form className="signupForm" onSubmit={this.submitSignup}>
-          <label id="email"> enter your email: </label>
-          <input htmlFor="email" value={this.state.email} onChange={this.handleChangeOfEmail}/>
+          <label id="email"> enter your email:
+            <input htmlFor="email" value={this.state.email} onChange={this.handleChangeOfEmail}/>
+          </label>
           <br/>
           <label id="signUpPassword"> create a password: </label>
           <input htmlFor="signUpPassword" type="password" value={this.state.password} onChange={this.handleChangeOfPassword}/>
