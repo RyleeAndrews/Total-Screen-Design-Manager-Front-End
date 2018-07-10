@@ -84,7 +84,7 @@ class Home extends React.Component {
               </div>
               <div className="brands">
                 <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand 
+                  Our brands that we carry click on each logo for catalog of that brand
                 </p>
               </div>
               <Slider/>
@@ -126,6 +126,8 @@ class Home extends React.Component {
             </div>
           ) : null
         }
+        <div className="footer">
+        </div>
       </div>
     );
   }

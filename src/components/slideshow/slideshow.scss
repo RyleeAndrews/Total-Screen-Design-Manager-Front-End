@@ -1,7 +1,7 @@
 .slider {
   float: right;
   width: 20%;
-  margin-right: 50%;
+  margin-right: 43%;
 }
 
 .pic1 {
@@ -16,12 +16,15 @@
   margin-bottom: 10%;
 }
 
+.btnPhoto {
+  display: none;
+}
 
 #rightArrow {
   color: black;
   font-size: 2em;
   display: inline;
-  margin-left: 450%;
+  margin-right: -37%;
   margin-bottom: 3%;
   float: right;
 }
@@ -31,6 +34,6 @@
   font-size: 2em;
   display: inline;
   margin-bottom: 3%;
-  margin-left: -20%;
+  margin-left: 0%;
   float: left;
 }
