@@ -7,6 +7,8 @@ import DTG from './home/dtg.js';
 import Embroidered from './home/embroidered.js';
 import Vinyl from './home/vinyl.js';
 import GraphicDesign from './home/graphicdesign.js';
+import About from './home/about.js';
+import Contact from './home/contact.js';
 class App extends React.Component {
 
   constructor(props) {
@@ -25,6 +27,8 @@ class App extends React.Component {
           <Route exact path='/embroidery' component={Embroidered} />
           <Route exact path="/vinyl" component={Vinyl} />
           <Route exact path="/graphicdesign" component={GraphicDesign} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
         </main>
       </React.Fragment>
     );

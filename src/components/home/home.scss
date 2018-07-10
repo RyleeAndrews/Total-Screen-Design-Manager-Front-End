@@ -1,5 +1,96 @@
-.auth {
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+.head {
+  height: 150px;
+  background-color: black;
+}
+
+.brands {
+  text-align: center;
+  background-color: black;
+  height: 50px;
+}
+
+.brandsWord {
+  font-size: 1.3em;
+  font-family: 'Cabin', sans-serif;
+  color: white;
+  padding-top: 10px;
+}
+
+.btnHead {
   float: left;
+  left: 0%;
+  margin-right: 90%;
+  height: 36px;
+  background-color: black;
+  width: 25%;
+}
+
+.pageBtn {
+  float: left;
+  height: 36px;
+  width: 25%;
+  display: inline-block;
+  background-color: #0EDBF5;
+  font-size: 1em;
+  font-family: 'Cabin', sans-serif;
+}
+
+.pageBtn:focus, .pageBtn:active, .pageBtn.active, .pageBtn:focus:active {
+  background-image: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.pageBtn1 {
+  height: 36px;
+  width: 25%;
+  display: inline-block;
+  margin-left: 1%;
+  float: left;
+  background-color: #0EDBF5;
+  font-size: 1em;
+  font-family: 'Cabin', sans-serif;
+}
+.pageBtn1:focus, .pageBtn1:active, .pageBtn1.active, .pageBtn1:focus:active {
+  background-image: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.pageBtn2 {
+  height: 36px;
+  width: 25%;
+  display: inline-block;
+  margin-left: 1%;
+  float: left;
+  background-color: #0EDBF5;
+  font-size: 1em;
+  font-family: 'Cabin', sans-serif;
+}
+
+.pageBtn2:focus, .pageBtn2:active, .pageBtn2.active, .pageBtn2:focus:active {
+  background-image: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.tsdhead {
+  text-align: center;
+  color: #09990F;
+  font-family: 'Cabin', sans-serif;
+  float: left;
+  margin-left: 42.5%;
+  margin-top: 3%;
+}
+
+.auth {
+  margin-left: 88%;
+  width: 15%;
 }
 
 .frontPhoto {
@@ -113,6 +204,85 @@
 .graphicdesigndiv a:hover {
   color: blue;
 }
+
+.header {
+  background-color: white;
+  width: 10%;
+  height: 50px;
+  color: white;
+  margin-top: .5%;
+}
+
+.shopDiv {
+  width: 10%;
+  background-color: black;
+  height: 50px;
+  text-align: center;
+}
+
+.shopWord {
+  color: white;
+  padding-top: 15px;
+  font-family: 'Cabin', sans-serif;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropbtn:focus, .dropbtn:active, .dropbtn.active, .dropbtn:focus:active {
+  background-image: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #0044E9;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #0044E9;
+}
+
 
 @media only screen and (max-width: 1320px){
   .words {

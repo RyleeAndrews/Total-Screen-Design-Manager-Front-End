@@ -1,0 +1,36 @@
+.slider {
+  float: right;
+  width: 50%;
+  margin-right: 20%;
+}
+
+.pic1 {
+  box-shadow: 8px 8px 0px rgba(38,37,38, 1);
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.pic2 {
+  box-shadow: 8px 8px 0px rgba(38,37,38, 1);
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+
+#rightArrow {
+  color: black;
+  font-size: 2em;
+  display: inline;
+  margin-left: 450%;
+  margin-bottom: 3%;
+  float: right;
+}
+
+#leftArrow {
+  color: black;
+  font-size: 2em;
+  display: inline;
+  margin-bottom: 3%;
+  margin-left: -20%;
+  float: left;
+}

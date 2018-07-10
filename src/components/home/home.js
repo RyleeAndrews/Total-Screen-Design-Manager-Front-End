@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AuthDashboard from '../auth/authdashboard.js';
+import Slider from '../slideshow/slider.js';
 import './home.scss';
 class Home extends React.Component {
   constructor(props){
@@ -64,7 +65,64 @@ class Home extends React.Component {
         {
           this.state.main ? (
             <div className="main">
-              <AuthDashboard className="auth"/>
+              <div className="head">
+                <h1 className="tsdhead"> Total Screen Design </h1>
+                <div className="btnHead">
+                  <Link to="/">
+                    <button className="pageBtn"> Home </button>
+                  </Link>
+                  <Link to="/about">
+                    <button className="pageBtn1"> About </button>
+                  </Link>
+                  <Link to="/contact">
+                    <button className="pageBtn2"> Contact </button>
+                  </Link>
+                </div>
+                <div className="auth">
+                  <AuthDashboard/>
+                </div>
+              </div>
+              <div className="brands">
+                <p className="brandsWord">
+                  Our brands that we carry click on each logo for catalog of that brand 
+                </p>
+              </div>
+              <Slider/>
+              <div className="shopDiv">
+                <p className="shopWord"> Shop </p>
+              </div>
+              <div className="header">
+                <div className="dropdown">
+                  <Link to="/men">
+                    <button className="dropbtn">Men</button>
+                  </Link>
+                  <div className="dropdown-content">
+                    <Link to="/menssweatshirts"> Sweatshirts </Link>
+                    <Link to="/mensshirts"> Shirts </Link>
+                    <Link to="/mensweatpants"> Sweatpants </Link>
+                  </div>
+                </div>
+                <div className="dropdown">
+                  <Link to="/women">
+                    <button className="dropbtn">Women</button>
+                  </Link>
+                  <div className="dropdown-content">
+                    <Link to="/womenssweatshirts"> Sweatshirts </Link>
+                    <Link to="/womensshirts"> Shirts </Link>
+                    <Link to="/womensweatpants"> Sweatpants </Link>
+                  </div>
+                </div>
+                <div className="dropdown">
+                  <Link to="/youth">
+                    <button className="dropbtn">Youth</button>
+                  </Link>
+                  <div className="dropdown-content">
+                    <Link to="/youthsweatshirts"> Sweatshirts </Link>
+                    <Link to="/youthshirts"> Shirts </Link>
+                    <Link to="/youthsweatpants"> Sweatpants </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           ) : null
         }

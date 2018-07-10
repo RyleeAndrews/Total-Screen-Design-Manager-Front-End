@@ -1,4 +1,5 @@
 import React from 'react';
+import './auth.scss';
 
 class AuthForm extends React.Component {
   constructor(props){
@@ -44,6 +45,7 @@ class AuthForm extends React.Component {
           <br/>
           <label id="signUpPassword"> create a password: </label>
           <input htmlFor="signUpPassword" type="password" value={this.state.password} onChange={this.handleChangeOfPassword}/>
+          <br/>
           <button type="submit"> submit </button>
         </form>
       </div>
