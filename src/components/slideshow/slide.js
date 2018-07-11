@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './slideshow.scss';
@@ -11,8 +12,8 @@ class Slide1 extends React.Component {
   render(){
     return(
       <div className="slide1">
-        <Link to="/portandcompany">
-          <img className="pic1" src={require('./pandco.jpg')} />
+        <Link to="/gildan">
+          <img className="pic1" src={require('./gildan.jpg')} />
           <button type="submit" className="btnPhoto"></button>
         </Link>
       </div>

@@ -123,11 +123,11 @@ class Home extends React.Component {
                   </div>
                 </div>
               </div>
+              <div className="footer">
+              </div>
             </div>
           ) : null
         }
-        <div className="footer">
-        </div>
       </div>
     );
   }
