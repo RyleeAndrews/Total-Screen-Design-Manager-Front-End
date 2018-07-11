@@ -70,7 +70,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
         loader: 'url-loader',
       },
       // If it's a .scss file

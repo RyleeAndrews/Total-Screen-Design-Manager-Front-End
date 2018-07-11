@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin');
 
+body {
+  background-color: #E0E3E3;
+}
+
 .head {
   height: 150px;
   background-color: black;
@@ -9,6 +13,12 @@
   height: 150px;
   background-color: black;
   margin-top: 50%;
+}
+
+.footwords {
+  text-align: center;
+  color: white;
+  padding-top: 70px;
 }
 
 .brands {

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './slideshow.scss';
 
-class Slide6 extends React.Component {
+class Slide13 extends React.Component {
   constructor(props){
     super(props);
 
@@ -11,9 +11,9 @@ class Slide6 extends React.Component {
   }
   render(){
     return(
-      <div className="slide6">
-        <Link to="/stormtech">
-          <img className="pic6" src={require('./stormtech.png')} />
+      <div className="slide13">
+        <Link to="/driduck">
+          <img className="pic13" src={require('./driduck1.png')} />
           <button type="submit" className="btnPhoto"></button>
         </Link>
       </div>
@@ -21,4 +21,4 @@ class Slide6 extends React.Component {
   }
 }
 
-export default Slide6;
+export default Slide13;

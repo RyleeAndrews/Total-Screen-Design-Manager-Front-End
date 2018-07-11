@@ -124,6 +124,7 @@ class Home extends React.Component {
                 </div>
               </div>
               <div className="footer">
+                <p className="footwords"> website made by Rylee Andrews copyright@2018 </p>
               </div>
             </div>
           ) : null
