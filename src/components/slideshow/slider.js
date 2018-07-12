@@ -30,9 +30,7 @@ class Slider extends React.Component {
     };
   }
 
-  UNSAFE_componentWillMount(){
-    this.timer();
-  }
+
 
   timer(){
     setInterval(this.nextSlide,3000);
@@ -47,149 +45,165 @@ class Slider extends React.Component {
   }
 
   render() {
-    console.log(this.state.slideCount);
     return (
-      <div className="slider">
+      <div>
+        <div className="slider">
+        <div className="brands">
+          <p className="brandsWord">
+            Our brands that we carry click on each logo for catalog of that brand
+          </p>
+        </div>
+          {/* Slides go here */}
+          { this.state.slideCount === 1 ?
+            <div>
+              <Slide1 />
+            </div>
+            : null }
 
-        {/* Slides go here */}
-        { this.state.slideCount === 1 ?
-          <div>
-            <Slide1 />
-          </div>
-          : null }
-
-        { this.state.slideCount === 2 ?
-          <div>
-            <Slide2 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 3 ?
-          <div>
-            <Slide3 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 4 ?
-          <div>
-            <Slide4 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 5 ?
-          <div>
-            <Slide5 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 6 ?
-          <div>
-            <Slide6 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 7 ?
-          <div>
-            <Slide7 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 8 ?
-          <div>
-            <Slide8 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 9 ?
-          <div>
-            <Slide9 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 10 ?
-          <div>
-            <Slide10 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 11 ?
-          <div>
-            <Slide11 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 12 ?
-          <div>
-            <Slide12 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 13 ?
-          <div>
-            <Slide13 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 14 ?
-          <div>
-            <Slide14 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 15 ?
-          <div>
-            <Slide15 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 16 ?
-          <div>
-            <Slide16 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 17 ?
-          <div>
-            <Slide17 />
-            <LeftArrow previousSlide={this.previousSlide}/>
-            <RightArrow nextSlide={this.nextSlide}/>
-          </div>
-          : null
-        }
-        { this.state.slideCount === 18 ?
-          <div>
-            <Slide18 />
-            <LeftArrow previousSlide={this.previousSlide}/>
+          { this.state.slideCount === 2 ?
+            <div>
+              <Slide2 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 3 ?
+            <div>
+              <Slide3 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 4 ?
+            <div>
+              <Slide4 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 5 ?
+            <div>
+              <Slide5 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 6 ?
+            <div>
+              <Slide6 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 7 ?
+            <div>
+              <Slide7 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 8 ?
+            <div>
+              <Slide8 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 9 ?
+            <div>
+              <Slide9 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 10 ?
+            <div>
+              <Slide10 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 11 ?
+            <div>
+              <Slide11 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 12 ?
+            <div>
+              <Slide12 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 13 ?
+            <div>
+              <Slide13 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 14 ?
+            <div>
+              <Slide14 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 15 ?
+            <div>
+              <Slide15 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 16 ?
+            <div>
+              <Slide16 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 17 ?
+            <div>
+              <Slide17 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+              <RightArrow nextSlide={this.nextSlide}/>
+            </div>
+            : null
+          }
+          { this.state.slideCount === 18 ?
+            <div>
+              <Slide18 />
+              <LeftArrow previousSlide={this.previousSlide}/>
+            </div>
+            : null
+          }
+        </div>
+        { this.state.slideCount > 18 ?
+          <div className="afterSlide">
+            <div className="imgContainer">
+            </div>
+            <div className="imgContainer">
+            </div>
+            <div className="imgContainer">
+            </div>
           </div>
           : null
         }

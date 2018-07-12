@@ -11,6 +11,7 @@ class Home extends React.Component {
     this.state = {
       entry: true,
       main: false,
+
     };
   }
   pageToggle(event){
@@ -81,11 +82,6 @@ class Home extends React.Component {
                 <div className="auth">
                   <AuthDashboard/>
                 </div>
-              </div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
               </div>
               <Slider/>
               <div className="shopDiv">
