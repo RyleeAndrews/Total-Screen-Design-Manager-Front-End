@@ -30,7 +30,9 @@ class Slider extends React.Component {
     };
   }
 
-
+  UNSAFE_componentWillMount(){
+    this.timer();
+  }
 
   timer(){
     setInterval(this.nextSlide,3000);
