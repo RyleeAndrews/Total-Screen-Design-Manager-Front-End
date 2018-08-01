@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin');
 
-body {
-  background-color: #E0E3E3;
-}
+
+
 
 .head {
-  height: 150px;
-  background-color: black;
+  height: 450px;
+  background-color: #1A1B1C;
 }
 
 .footer {
   height: 150px;
-  background-color: black;
-  margin-top: 50%;
+  background-color: #1A1B1C;
+  margin-top: 45%;
 }
 
 .footwords {
@@ -26,8 +25,8 @@ body {
   left: 0%;
   margin-right: 90%;
   height: 36px;
-  background-color: black;
   width: 25%;
+  opacity: .5;
 }
 
 .pageBtn {
@@ -35,9 +34,11 @@ body {
   height: 46px;
   width: 25%;
   display: inline-block;
-  background-color: #0EDBF5;
+  background-color: #1A1B1C;
   font-size: 1em;
   font-family: 'Cabin', sans-serif;
+  border: none;
+  color: white;
 }
 
 .pageBtn:focus, .pageBtn:active, .pageBtn.active, .pageBtn:focus:active {
@@ -47,40 +48,6 @@ body {
   box-shadow: none;
 }
 
-.pageBtn1 {
-  height: 46px;
-  width: 25%;
-  display: inline-block;
-  margin-left: 1%;
-  float: left;
-  background-color: #0EDBF5;
-  font-size: 1em;
-  font-family: 'Cabin', sans-serif;
-}
-.pageBtn1:focus, .pageBtn1:active, .pageBtn1.active, .pageBtn1:focus:active {
-  background-image: none;
-  outline: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.pageBtn2 {
-  height: 46px;
-  width: 25%;
-  display: inline-block;
-  margin-left: 1%;
-  float: left;
-  background-color: #0EDBF5;
-  font-size: 1em;
-  font-family: 'Cabin', sans-serif;
-}
-
-.pageBtn2:focus, .pageBtn2:active, .pageBtn2.active, .pageBtn2:focus:active {
-  background-image: none;
-  outline: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
 
 .tsdhead {
   text-align: center;
@@ -94,21 +61,19 @@ body {
 .auth {
   margin-left: 74.5%;
   width: 25%;
-  background-color: #0EDBF5;
+  background-color: white;
   border: 5px solid grey;
   height: 75px;
+  border-radius: 4px;
+  opacity: 1;
 }
 
-.frontPhoto {
-  width: 100vw;
-  height: 100vh;
-  filter: blur(8px) grayscale(40%);
-}
 
 .frontDiv {
   position: relative;
   width: 100%;
-  border: 8px solid black;
+  height: 100vh;
+  background-color: #515457;
 }
 
 .frontDiv .frontButton {
@@ -220,18 +185,7 @@ body {
   margin-top: .5%;
 }
 
-.shopDiv {
-  width: 10%;
-  background-color: black;
-  height: 50px;
-  text-align: center;
-}
 
-.shopWord {
-  color: white;
-  padding-top: 15px;
-  font-family: 'Cabin', sans-serif;
-}
 
 /* Dropdown Button */
 .dropbtn {

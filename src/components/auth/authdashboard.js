@@ -1,5 +1,7 @@
+import './auth.scss';
 import React from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
 import * as actions from './authactions.js';
 import AuthForm from './authform.js';
 
@@ -19,17 +21,28 @@ class AuthDashboard extends React.Component {
       .then( () => this.setState({init: false}));
   }
 
+
   render(){
     if(this.state.init){
       return null;
     }
-    console.log(this.state.init);
+    console.log(this.props.auth.token, this.props.firstname);
     return(
       <div>
-        <AuthForm
-          signUp={this.props.authCreate}
-          signIn={this.props.authLogin}
-        />
+        {!this.props.auth.token ?
+          <AuthForm
+            signIn={this.props.authLogin}
+            signUp={this.props.authCreate}
+          />
+          :
+          <div>
+            <p className="signedIn"> signed in as {this.props.auth.token.email} </p>
+            <Link to="/profile">
+              <button type="submit"> profile </button>
+            </Link>
+            <button type="submit" onClick={this.props.authLogout}> logout </button>
+          </div>
+        }
       </div>
     );
   }

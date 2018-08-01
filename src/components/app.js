@@ -9,6 +9,7 @@ import Vinyl from './home/vinyl.js';
 import GraphicDesign from './home/graphicdesign.js';
 import About from './home/about.js';
 import Contact from './home/contact.js';
+import Profile from './profile/profiledashboard.js';
 class App extends React.Component {
 
   constructor(props) {
@@ -29,6 +30,7 @@ class App extends React.Component {
           <Route exact path="/graphicdesign" component={GraphicDesign} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/profile" component={Profile} />
         </main>
       </React.Fragment>
     );

@@ -1,0 +1,43 @@
+.head1 {
+  height: 250px;
+  width: 100%;
+  background-color: #1A1B1C;
+}
+
+.word1 {
+  color: #09990F;
+  text-align: center;
+  padding-top: 65px;
+}
+
+.btnHead2 {
+  float: left;
+  left: 0%;
+  margin-right: 90%;
+  height: 36px;
+  width: 25%;
+  opacity: .5;
+}
+
+.pageBtn2 {
+  float: left;
+  height: 46px;
+  width: 25%;
+  display: inline-block;
+  background-color: #1A1B1C;
+  font-size: 1em;
+  font-family: 'Cabin', sans-serif;
+  border: none;
+  color: white;
+}
+
+.pageBtn2:focus, .pageBtn2:active, .pageBtn2.active, .pageBtn2:focus:active {
+  background-image: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#firstname {
+  font-size: 2em;
+}

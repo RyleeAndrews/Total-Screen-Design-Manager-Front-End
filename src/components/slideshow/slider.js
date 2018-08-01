@@ -19,24 +19,26 @@ import Slide17 from './slide17.js';
 import Slide18 from './slide18.js';
 import LeftArrow from './leftArrow.js';
 import RightArrow from './rightArrow.js';
+import { Link } from 'react-router-dom';
 class Slider extends React.Component {
   constructor(props) {
     super(props);
-    this.timer = this.timer.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.previousSlide = this.previousSlide.bind(this);
+
     this.state = {
       slideCount: 1,
     };
   }
 
   UNSAFE_componentWillMount(){
-    this.timer();
+    this.timer = setInterval(this.nextSlide, 3000);
   }
 
-  timer(){
-    setInterval(this.nextSlide,3000);
+  componentWillUnmount(){
+    clearInterval(this.timer);
   }
+
 
   nextSlide() {
     this.setState({ slideCount: this.state.slideCount + 1 });
@@ -47,6 +49,7 @@ class Slider extends React.Component {
   }
 
   render() {
+    console.log(this.state.slideCount);
     return (
       <div>
         <div className="slider">
@@ -54,250 +57,154 @@ class Slider extends React.Component {
           {/* Slides go here */}
           { this.state.slideCount === 1 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide1 />
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null }
 
           { this.state.slideCount === 2 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide2 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
             </div>
             : null
           }
           { this.state.slideCount === 3 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide3 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
             </div>
             : null
           }
           { this.state.slideCount === 4 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide4 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 5 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide5 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 6 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide6 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 7 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide7 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 8 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide8 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 9 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide9 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 10 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide10 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 11 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide11 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 12 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide12 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 13 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide13 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 14 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide14 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 15 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide15 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 16 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide16 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 17 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide17 />
-              <LeftArrow previousSlide={this.previousSlide}/>
-              <RightArrow nextSlide={this.nextSlide}/>
+
             </div>
             : null
           }
           { this.state.slideCount === 18 ?
             <div>
-              <div className="brands">
-                <p className="brandsWord">
-                  Our brands that we carry click on each logo for catalog of that brand
-                </p>
-              </div>
+
               <Slide18 />
-              <LeftArrow previousSlide={this.previousSlide}/>
+
             </div>
             : null
           }
+          { this.state.slideCount > 18 ? (
+            <div>
+              hey
+            </div>
+          )
+            : null
+          }
         </div>
-        { this.state.slideCount > 18 ?
-          <div className="popContainer">
-            <div className="contentContainer">
-            </div>
-            <div className="contentContainer">
-            </div>
-            <div className="contentContainer">
-            </div>
-            <div className="contentContainer">
-            </div>
-          </div>
-          : null
-        }
       </div>
     );
   }

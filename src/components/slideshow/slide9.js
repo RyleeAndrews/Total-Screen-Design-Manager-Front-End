@@ -11,9 +11,9 @@ class Slide9 extends React.Component {
   }
   render(){
     return(
-      <div className="slide9">
+      <div className="slide">
         <Link to="/anvil">
-          <img className="pic9" src={require('./anvillogo.jpg')} />
+          <img className="pic" src={require('./anvillogo.jpg')} />
           <button type="submit" className="btnPhoto"></button>
         </Link>
       </div>

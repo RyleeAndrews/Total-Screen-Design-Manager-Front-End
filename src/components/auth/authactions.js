@@ -1,3 +1,4 @@
+
 'use strict';
 
 import superagent from 'superagent';
@@ -55,4 +56,9 @@ export const authLogout = () => ({
 export const setUser = auth => ({
   type: "SET_AUTH_USER",
   payload: auth
+});
+
+export const updateUser = user => ({
+  type: 'UPDATE_USER',
+  payload: user,
 });
