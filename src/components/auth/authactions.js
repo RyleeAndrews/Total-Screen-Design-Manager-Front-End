@@ -49,7 +49,7 @@ export const authCreateAccount = user => dispatch => {
 };
 
 
-export const authLogout = () => ({
+export const authLogout = user => ({
   type: "DELETE_AUTH_TOKEN",
 });
 

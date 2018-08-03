@@ -11,7 +11,7 @@ class AuthDashboard extends React.Component {
 
     this.state = {
       init: true,
-      signin: false,
+      signinto: false,
       signinPage: true,
     };
   }
@@ -38,9 +38,9 @@ class AuthDashboard extends React.Component {
           <div>
             <p className="signedIn"> signed in as {this.props.auth.token.email} </p>
             <Link to="/profile">
-              <button type="submit"> profile </button>
+              <button type="submit" className="profilebtn"> profile </button>
             </Link>
-            <button type="submit" onClick={this.props.authLogout}> logout </button>
+            <button type="submit" className="logoutbtn" onClick={this.props.authLogout}> logout </button>
           </div>
         }
       </div>

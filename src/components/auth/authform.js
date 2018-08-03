@@ -5,15 +5,17 @@ class AuthForm extends React.Component {
   constructor(props){
     super(props);
 
-    this.handleChangeOfEmail = this.handleChangeOfEmail.bind(this);
+    this.handleChangeOfUsername= this.handleChangeOfUsername.bind(this);
     this.handleChangeOfPassword = this.handleChangeOfPassword.bind(this);
+    this.handleChangeOfEmail = this.handleChangeOfEmail.bind(this);
     this.submitSignup = this.submitSignup.bind(this);
     this.submitSignin = this.submitSignin.bind(this);
     this.signinToggle = this.signinToggle.bind(this);
 
     this.state = {
-      email: '',
+      username: '',
       password: '',
+      email: '',
       signedIn: false,
     };
   }
@@ -22,14 +24,19 @@ class AuthForm extends React.Component {
     this.setState({signedIn: !this.state.signedIn});
   }
 
-  handleChangeOfEmail(event){
+  handleChangeOfUsername(event){
     event.preventDefault();
-    this.setState({email: event.target.value});
+    this.setState({username: event.target.value});
   }
 
   handleChangeOfPassword(event){
     event.preventDefault();
     this.setState({password: event.target.value});
+  }
+
+  handleChangeOfEmail(event){
+    event.preventDefault();
+    this.setState({email: event.target.value});
   }
 
   submitSignup(event){
@@ -48,12 +55,15 @@ class AuthForm extends React.Component {
         {!this.state.signedIn ?
           <div>
             <form className="signupForm" onSubmit={this.submitSignup}>
-              <label id="email"> enter your email:
-                <input htmlFor="email" value={this.state.email} onChange={this.handleChangeOfEmail}/>
+              <label id="username"> create a username:
+                <input htmlFor="username" value={this.state.username} onChange={this.handleChangeOfUsername}/>
               </label>
               <br/>
               <label id="signUpPassword"> create a password:
                 <input htmlFor="signUpPassword" type="password" value={this.state.password} onChange={this.handleChangeOfPassword}/>
+              </label>
+              <label id="signUpPassword"> enter a email:
+                <input htmlFor="signUpPassword" type="password" value={this.state.email} onChange={this.handleChangeOfEmail}/>
               </label>
               <button className="signBtn" type="submit"> submit </button>
               <button type="submit" onClick={this.signinToggle}> sign in </button>
@@ -62,8 +72,8 @@ class AuthForm extends React.Component {
           :
           <div>
             <form className="signinForm" onSubmit={this.submitSignin}>
-              <label id="email"> email:
-                <input htmlFor="email" value={this.state.email} onChange={this.handleChangeOfEmail} />
+              <label id="username"> username:
+                <input htmlFor="username" value={this.state.username} onChange={this.handleChangeOfUsername} />
               </label>
               <br/>
               <label id="password"> password:

@@ -12,6 +12,7 @@ class Profile extends React.Component {
     super(props);
 
     this.handleImage = this.handleImage.bind(this);
+
     this.state = {};
   }
 
@@ -38,27 +39,40 @@ class Profile extends React.Component {
 
   render(){
     let hasPreview = this.state.preview || undefined;
-    console.log(this.state._id, this.state.firstname);
+    console.log(this.state);
     return(
       <div>
         <div className="head1">
           <h1 className="word1"> Total Screen Design </h1>
           <div className="btnHead">
             <Link to="/">
-              <button className="pageBtn"> Home </button>
+              <button className="pageBtn2"> Home </button>
             </Link>
             <Link to="/about">
-              <button className="pageBtn"> About </button>
+              <button className="pageBtn2"> About </button>
             </Link>
             <Link to="/contact">
-              <button className="pageBtn"> Contact </button>
+              <button className="pageBtn2"> Contact </button>
             </Link>
           </div>
+          <div className="auth">
+            <AuthDashboard className="authDash"/>
+          </div>
         </div>
-        {!this.state.username ?
-        <ProfileForm updateUser={this.props.updateUser}/>
-        : <div></div>
-      }
+        <div className="btnProfile">
+          <Link to="/profile">
+            <button className="pageBtn3"> Profile </button>
+          </Link>
+          <Link to="/editprofile">
+            <button className="pageBtn3"> Edit Profile </button>
+          </Link>
+          <Link to="/pastorders">
+            <button className="pageBtn3"> Past Orders </button>
+          </Link>
+          <Link to="/uploadartwork">
+            <button className="pageBtn3"> Upload Artwork </button>
+          </Link>
+        </div>
       </div>
     );
   }
@@ -66,6 +80,7 @@ class Profile extends React.Component {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  profile: state.profile,
 });
 
 const mapDispatchToProps = ( dispatch, getState ) => ({

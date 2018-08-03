@@ -1,4 +1,6 @@
-#email {
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+#username {
   font-size: 1.2em;
   color: black;
   margin-left: 20%;
@@ -17,5 +19,12 @@
 .signedIn {
   margin-left: 40%;
   word-wrap: break-word;
-  margin-top: 10%;
+}
+
+.profilebtn {
+  margin-left: 80%;
+}
+
+.logoutbtn {
+  margin-left: 80%;
 }

@@ -49,7 +49,6 @@ class Slider extends React.Component {
   }
 
   render() {
-    console.log(this.state.slideCount);
     return (
       <div>
         <div className="slider">

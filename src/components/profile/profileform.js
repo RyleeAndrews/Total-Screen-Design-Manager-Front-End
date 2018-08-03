@@ -8,7 +8,6 @@ class ProfileForm extends React.Component {
     let initialState = {
       firstname: '',
       lastname: '',
-      about: '',
       avatar: '',
       avatarFile: '',
     };

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin');
 .head1 {
   height: 250px;
   width: 100%;
@@ -40,4 +41,29 @@
 
 #firstname {
   font-size: 2em;
+}
+
+.btnProfile {
+  height: 50px;
+  background-color: #1A1B1C;
+  margin-top: .5%;
+}
+
+.pageBtn3 {
+  margin-left: 5%;
+  border: none;
+  padding-top: .25%;
+  font-size: 1em;
+  height: 50px;
+  background-color: #1A1B1C;
+  color: white;
+  font-family: 'Cabin', sans-serif;
+  opacity: .5;
+}
+
+.pageBtn3:focus, .pageBtn3:active, .pageBtn3.active, .pageBtn3:focus:active {
+  background-image: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
