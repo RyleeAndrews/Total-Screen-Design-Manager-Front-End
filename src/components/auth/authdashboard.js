@@ -26,7 +26,6 @@ class AuthDashboard extends React.Component {
     if(this.state.init){
       return null;
     }
-    console.log(this.props.auth.token, this.props.firstname);
     return(
       <div>
         {!this.props.auth.token ?

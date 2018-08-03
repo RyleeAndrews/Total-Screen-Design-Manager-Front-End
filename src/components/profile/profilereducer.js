@@ -1,29 +1,30 @@
 'use strict';
 
-let defaultState = {};
+let initialState = {};
 
-export default (state=defaultState,action) => {
+export default (state=initialState, action) => {
 
-    let {type,payload} = action;
+  let {type, payload} = action;
 
-    switch(type) {
+  switch(type) {
 
-        case "SET_AUTH_USER": {
-            return payload.user;
-        }
+  case 'INIT':
+    return payload || initialState;
 
-        case "UPDATE_USER": {
-          console.log(state,payload);
-          return Object.assign(state,payload);
-        }
+  case 'CREATE':
+    return payload;
 
-        case "DELETE_USER": {
-          return Object.assign({...state,payload});
-        }
+  case 'UPDATE':
+    return Object.assign(state,payload);
 
-        default:
-            return state;
+  case 'DELETE':
+    return initialState;
 
-    }
+  case 'RESET':
+    return initialState;
+
+  default:
+    return state;
+  }
 
 };

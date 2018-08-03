@@ -5,7 +5,7 @@ export default (state=defaultState, action) => {
 
   switch(type){
   case 'SET_AUTH_TOKEN':
-    return {token:payload.token, email: payload.email};
+    return {token:payload};
 
   case 'SET_AUTH_USER':
     return {token: payload.user};

@@ -10,6 +10,7 @@ import GraphicDesign from './home/graphicdesign.js';
 import About from './home/about.js';
 import Contact from './home/contact.js';
 import Profile from './profile/profiledashboard.js';
+import EditProfile from './profile/editProfile.js';
 class App extends React.Component {
 
   constructor(props) {
@@ -31,6 +32,7 @@ class App extends React.Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/editprofile" component={EditProfile} />
         </main>
       </React.Fragment>
     );

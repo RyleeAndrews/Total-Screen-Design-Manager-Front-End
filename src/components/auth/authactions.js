@@ -4,7 +4,6 @@
 import superagent from 'superagent';
 import cookie from 'react-cookies';
 
-console.log(__AUTH_URL__);
 export const authLogin = (user={}) => dispatch => {
 
   let token = cookie.load("auth");
@@ -48,6 +47,25 @@ export const authCreateAccount = user => dispatch => {
     .catch( e => console.error('Authenticaton Error:', e.message) );
 };
 
+export const updateUser = payload => dispatch => {
+
+  let token = cookie.load('auth');
+  console.log('hol', payload);
+
+  let URL =  `${__API_URL__}/auth/${payload._id}`;
+
+  superagent.put(URL)
+    .set('Authorization', "Bearer " + token)
+    .field('username', payload.username)
+    .then( res => {
+      dispatch(updateUserAction(res.body));
+      console.log(res);
+    })
+    .catch( error => {
+      console.error(error.message);
+    })
+};
+
 
 export const authLogout = user => ({
   type: "DELETE_AUTH_TOKEN",
@@ -58,7 +76,7 @@ export const setUser = auth => ({
   payload: auth
 });
 
-export const updateUser = user => ({
+export const updateUserAction = auth => ({
   type: 'UPDATE_USER',
-  payload: user,
+  payload: auth,
 });

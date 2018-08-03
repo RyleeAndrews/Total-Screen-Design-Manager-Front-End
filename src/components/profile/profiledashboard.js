@@ -3,7 +3,7 @@ import React from 'react';
 import AuthDashboard from '../auth/authdashboard.js';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as actions from '../auth/authactions.js';
+import * as actions from './profileactions.js';
 import {renderIf, photoToDataUrl} from '../../lib/helperLib.js';
 import ProfileForm from './profileform.js';
 
@@ -13,15 +13,13 @@ class Profile extends React.Component {
 
     this.handleImage = this.handleImage.bind(this);
 
-    this.state = {};
+    this.state = this.props.profile;
   }
 
   UNSAFE_componentWillReceiveProps(props){
     if(props.profile){
       this.setState(props.profile);
     }
-    let preview = null;
-    this.setState({preview});
   }
 
   handleImage(event){
@@ -39,7 +37,7 @@ class Profile extends React.Component {
 
   render(){
     let hasPreview = this.state.preview || undefined;
-    console.log(this.state);
+    console.log(this.state.firstname);
     return(
       <div>
         <div className="head1">
@@ -73,19 +71,28 @@ class Profile extends React.Component {
             <button className="pageBtn3"> Upload Artwork </button>
           </Link>
         </div>
+        {!this.state.firstname ?
+          <ProfileForm profileCreate={this.props.profileCreate}/>
+          :
+          <div>
+            <div className="first"> {this.state.firstname} </div>
+            <br/>
+            <div className="last"> {this.state.lastname} </div>
+            <br />
+            <div className="company"> {this.state.companyname} </div>
+          </div>
+        }
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  auth: state.auth,
   profile: state.profile,
 });
 
 const mapDispatchToProps = ( dispatch, getState ) => ({
-  updateUser: user => dispatch(actions.updateUser(user)),
-  deleteUser: user => dispatch(actions.deleteUser(user)),
+  profileCreate: profile => dispatch(actions.profileCreate(profile)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

@@ -1,42 +1,75 @@
 import superagent from 'superagent';
 import cookie from 'react-cookies';
 
-export const updateUser = user => dispatch => {
 
-  let token = cookie.load('auth');
-  console.log('user',user);
 
-  let URL =  `${__API_URL__}/auth/${user._id}`;
+let API = `${__API_URL__}`;
 
-  superagent.put(URL)
-    .set('Authorization', "Bearer " + token)
-    .field('firstname', user.firstname)
-    .then( res => {
-      dispatch(updateUserAction(res.body));
-      console.log(res);
-    })
-    .catch( error => {
-      console.error(error.message);
-    })
+export const categoryInitialize = () => dispatch => {
+
+    superagent.get(API)
+        .set('Authorization', 'Bearer ' + bearerToken())
+        .then(res => dispatch(initAction(res.body)) )
+        .catch(console.error);
+
+}
+
+export const profileCreate = payload => dispatch => {
+
+  superagent.post(`${API}/postprofile`)
+    .set('Authorization', 'Bearer ' + bearerToken())
+    .send(payload)
+    .then(res => dispatch(createAction(res.body)) )
+    .catch(console.error);
+
 };
 
-const updateUserAction = user => ({
-  type: 'UPDATE_USER',
-  payload: user,
-});
+export const categoryUpdate = payload => dispatch => {
 
-export const deleteUser = user => dispatch => {
-  let token = cookie.load('auth');
+    let URL = `${API}/${payload._id}`;
 
-  let URL = `${__API_URL__}/auth/${user._id}`;
+    superagent.put(URL)
+        .set('Authorization', 'Bearer ' + bearerToken())
+        .send(payload)
+        .then(res => dispatch(updateAction(res.body)) )
+        .catch(console.error);
+
+};
+
+
+export const categoryDelete = payload => dispatch => {
+
+  let URL = `${API}/${payload._id}`;
 
   superagent.delete(URL)
-    .set('Authorization', 'Bearer ' + token)
-    .then(() => dispatch(remove(user)))
+    .send(payload)
+    .then(res => {
+      console.log('!!!!', payload)
+      dispatch(deleteAction(payload));
+    })
     .catch(console.error);
 };
 
-const remove = user => ({
-  type: 'DELETE_USER',
-  payload: user,
-})
+const bearerToken = () => {
+    return cookie.load('auth');
+};
+
+const initAction = list => ({
+   type: 'INIT',
+   payload: list
+});
+
+const createAction = profile => ({
+    type: 'CREATE',
+    payload: profile,
+});
+
+const updateAction = profile => ({
+  type: 'UPDATE',
+  payload: profile,
+});
+
+const deleteAction = profile => ({
+  type: 'DELETE',
+  payload: profile,
+});
