@@ -40,7 +40,7 @@ class EditProfile extends React.Component {
 
   handleUpdate(event){
     event.preventDefault();
-    this.props.updateUser(Object.assign({}, this.state));
+    this.props.updateProfile(Object.assign({}, this.state));
   }
 
   render(){
@@ -97,7 +97,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = ( dispatch, getState ) => ({
-  updateUser: user => dispatch(actions.updateUser(user)),
+  updateProfile: user => dispatch(actions.updateProfile(user)),
   deleteUser: user => dispatch(actions.deleteUser(user)),
 });
 

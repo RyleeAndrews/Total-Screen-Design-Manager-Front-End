@@ -24,10 +24,10 @@ export const profileCreate = payload => dispatch => {
 
 };
 
-export const categoryUpdate = payload => dispatch => {
+export const updateProfile = payload => dispatch => {
 
     let URL = `${API}/${payload._id}`;
-
+    console.log(payload);
     superagent.put(URL)
         .set('Authorization', 'Bearer ' + bearerToken())
         .send(payload)

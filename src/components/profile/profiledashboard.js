@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import * as actions from './profileactions.js';
 import {renderIf, photoToDataUrl} from '../../lib/helperLib.js';
 import ProfileForm from './profileform.js';
+import uuid from 'uuid/v4';
 
 class Profile extends React.Component {
   constructor(props){
@@ -37,7 +38,7 @@ class Profile extends React.Component {
 
   render(){
     let hasPreview = this.state.preview || undefined;
-    console.log(this.state.firstname);
+    console.log(this.state);
     return(
       <div>
         <div className="head1">

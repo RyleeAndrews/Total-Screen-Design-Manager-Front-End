@@ -35,7 +35,7 @@ class AuthDashboard extends React.Component {
           />
           :
           <div>
-            <p className="signedIn"> signed in as {this.props.auth.token.email} </p>
+            <p className="signedIn"> signed in as {this.props.profile.firstname} from {this.props.profile.companyname}</p>
             <Link to="/profile">
               <button type="submit" className="profilebtn"> profile </button>
             </Link>
@@ -49,6 +49,7 @@ class AuthDashboard extends React.Component {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  profile: state.profile,
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
