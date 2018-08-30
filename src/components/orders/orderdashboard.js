@@ -1,44 +1,17 @@
-import './profile.scss';
 import React from 'react';
-import AuthDashboard from '../auth/authdashboard.js';
+import * as actions from './orderactions.js';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as actions from './profileactions.js';
-import {renderIf, photoToDataUrl} from '../../lib/helperLib.js';
-import ProfileForm from './profileform.js';
+import AuthDashboard from '../auth/authdashboard.js';
+import OrderForm from './orderform.js';
 
-
-class Profile extends React.Component {
+class OrderDashboard extends React.Component {
   constructor(props){
     super(props);
 
-    this.handleImage = this.handleImage.bind(this);
-
-    this.state = this.props.profile;
+    this.state = this.props.orders;
   }
-
-  UNSAFE_componentWillReceiveProps(props){
-    if(props.profile){
-      this.setState(props.profile);
-    }
-  }
-
-  handleImage(event){
-    let {files} = event.target;
-    let avatarFile = files[0];
-
-    this.setState({avatarFile});
-
-    photoToDataUrl(avatarFile)
-      .then( preview => {
-        this.setState({preview});
-      })
-      .catch(console.error);
-  }
-
   render(){
-    let hasPreview = this.state.preview || undefined;
-    console.log(this.state);
     return(
       <div>
         <div className="head1">
@@ -75,28 +48,18 @@ class Profile extends React.Component {
             <button className="pageBtn3"> Upload Artwork </button>
           </Link>
         </div>
-        {!this.state.firstname ?
-          <ProfileForm profileCreate={this.props.profileCreate}/>
-          :
-          <div>
-            <div className="first"> {this.state.firstname} </div>
-            <br/>
-            <div className="last"> {this.state.lastname} </div>
-            <br />
-            <div className="company"> {this.state.companyname} </div>
-          </div>
-        }
+        <OrderForm orders={this.props.orders} orderCreate={this.props.orderCreate} />
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  profile: state.profile,
+  orders: state.orders,
 });
 
-const mapDispatchToProps = ( dispatch, getState ) => ({
-  profileCreate: profile => dispatch(actions.profileCreate(profile)),
+const mapDispatchToProps = (dispatch, getState) => ({
+  orderCreate: orders => dispatch(actions.orderCreate(orders)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderDashboard);

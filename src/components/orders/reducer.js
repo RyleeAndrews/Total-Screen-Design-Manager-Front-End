@@ -1,19 +1,24 @@
-let initialState = [];
+'use strict';
 
-export default (state = initialState, action) => {
+let initialState = {};
 
-  let {type,payload} = action;
+export default (state=initialState, action) => {
 
-  switch(type){
+  let {type, payload} = action;
+
+  switch(type) {
+
+  case 'INIT':
+    return payload || initialState;
 
   case 'CREATE':
-    return [...state,payload];
+    return payload;
 
   case 'UPDATE':
-    return state.map( i => i._id === payload._id ? payload : i);
+    return Object.assign(state,payload);
 
   case 'DELETE':
-    return state.filter( i => i._id !== payload);
+    return initialState;
 
   case 'RESET':
     return initialState;
@@ -21,4 +26,5 @@ export default (state = initialState, action) => {
   default:
     return state;
   }
+
 };

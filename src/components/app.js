@@ -11,6 +11,9 @@ import About from './home/about.js';
 import Contact from './home/contact.js';
 import Profile from './profile/profiledashboard.js';
 import EditProfile from './profile/editProfile.js';
+import OrderDashboard from './orders/orderdashboard.js';
+import PastOrders from './orders/pastorders.js';
+
 class App extends React.Component {
 
   constructor(props) {
@@ -33,6 +36,8 @@ class App extends React.Component {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/editprofile" component={EditProfile} />
+          <Route exact path="/order" component={OrderDashboard} />
+          <Route exact path="/pastorders" component={PastOrders} />
         </main>
       </React.Fragment>
     );

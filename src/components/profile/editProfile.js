@@ -71,6 +71,9 @@ class EditProfile extends React.Component {
           <Link to="/editprofile">
             <button className="pageBtn3"> Edit Profile </button>
           </Link>
+          <Link to="/order">
+            <button className="pageBtn3"> Order </button>
+          </Link>
           <Link to="/pastorders">
             <button className="pageBtn3"> Past Orders </button>
           </Link>
