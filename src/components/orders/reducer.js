@@ -1,6 +1,6 @@
 'use strict';
 
-let initialState = {};
+let initialState = [];
 
 export default (state=initialState, action) => {
 
@@ -8,19 +8,20 @@ export default (state=initialState, action) => {
 
   switch(type) {
 
-  case 'INIT':
+  case 'ORDER_INIT':
     return payload || initialState;
 
-  case 'CREATE':
-    return payload;
+  case 'ORDER_CREATE':
+    console.log('payload', payload);
+    return [...state, payload];
 
-  case 'UPDATE':
-    return Object.assign(state,payload);
+  case 'ORDER_UPDATE':
+    return state.map(order => order._id === payload._id ? payload : order);
 
-  case 'DELETE':
-    return initialState;
+  case 'ORDER_DELETE':
+    return state.filter(order => order._id !== payload);
 
-  case 'RESET':
+  case 'ORDER_RESET':
     return initialState;
 
   default:

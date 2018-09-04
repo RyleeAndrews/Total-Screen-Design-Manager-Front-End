@@ -23,7 +23,7 @@ export const orderCreate = payload => dispatch => {
 };
 
 const createAction = order => ({
-  type: 'CREATE',
+  type: 'ORDER_CREATE',
   payload: order,
 });
 
@@ -32,6 +32,6 @@ const bearerToken = () => {
 };
 
 const initAction = list => ({
-  type: 'INIT',
+  type: 'ORDER_INIT',
   payload: list,
 });

@@ -9,7 +9,7 @@ class OrderDashboard extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = this.props.orders;
+    this.state = {};
   }
   render(){
     return(

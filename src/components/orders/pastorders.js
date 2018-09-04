@@ -3,12 +3,13 @@ import * as actions from './orderactions.js';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import AuthDashboard from '../auth/authdashboard.js';
+import './order.scss';
 
 class PastOrders extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = this.props.orders
+    this.state = {};
   }
   render(){
     return(
@@ -47,18 +48,28 @@ class PastOrders extends React.Component {
             <button className="pageBtn3"> Upload Artwork </button>
           </Link>
         </div>
-        <div> sizes: {this.state.sizes} </div>
-        <div> individual: {this.state.individual} </div>
-        <div> company: {this.state.company} </div>
-        <div> address: {this.state.address} </div>
-        <div> contact: {this.state.contact} </div>
-        <div> email: {this.state.email} </div>
-        <div> style: {this.state.style} </div>
-        <div> supplier: {this.state.supplier} </div>
-        <div> quantity: {this.state.quantity} </div>
-        <div> color: {this.state.color} </div>
-        <div> placement: {this.state.placement} </div>
-        <div> ink-color: {this.state.inkColor} </div>
+        <div>
+          <ul>
+            {
+              this.props.orders.map((order,i) =>
+                <li key={order._id} order={order}>
+                  <h3> {order.sizes} </h3>
+                  <h3> {order.individual} </h3>
+                  <h3> {order.company} </h3>
+                  <h3> {order.address} </h3>
+                  <h3> {order.contact} </h3>
+                  <h3> {order.email} </h3>
+                  <h3> {order.style} </h3>
+                  <h3> {order.supplier} </h3>
+                  <h3> {order.quantity} </h3>
+                  <h3> {order.color} </h3>
+                  <h3> {order.placement} </h3>
+                  <h3> {order.inkColor} </h3>
+                </li>
+              )
+            }
+          </ul>
+        </div>
       </div>
     );
   }

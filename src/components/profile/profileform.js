@@ -36,7 +36,7 @@ class ProfileForm extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.profileCreate(Object.assign({}, this.props.profile, this.state));
+    this.props.profileCreate(Object.assign({}, this.state));
   }
 
   render(){

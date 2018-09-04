@@ -17,11 +17,7 @@ class Profile extends React.Component {
     this.state = this.props.profile;
   }
 
-  UNSAFE_componentWillReceiveProps(props){
-    if(props.profile){
-      this.setState(props.profile);
-    }
-  }
+
 
   handleImage(event){
     let {files} = event.target;
@@ -75,15 +71,15 @@ class Profile extends React.Component {
             <button className="pageBtn3"> Upload Artwork </button>
           </Link>
         </div>
-        {!this.state.firstname ?
+        {!this.props.profile.firstname ?
           <ProfileForm profileCreate={this.props.profileCreate}/>
           :
           <div>
-            <div className="first"> {this.state.firstname} </div>
+            <div className="first"> {this.props.profile.firstname} </div>
             <br/>
-            <div className="last"> {this.state.lastname} </div>
+            <div className="last"> {this.props.profile.lastname} </div>
             <br />
-            <div className="company"> {this.state.companyname} </div>
+            <div className="company"> {this.props.profile.companyname} </div>
           </div>
         }
       </div>

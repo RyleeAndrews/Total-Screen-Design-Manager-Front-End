@@ -98,19 +98,6 @@ class OrderForm extends React.Component {
   handleOrderCreate(event){
     event.preventDefault();
     this.props.orderCreate(Object.assign({}, this.state));
-    this.setState({ sizes: '',
-      individual: '',
-      company: '',
-      address: '',
-      contact: '',
-      email: '',
-      style: '',
-      supplier: '',
-      quantity: '',
-      color: '',
-      placement: '',
-      inkColor: '',
-    });
   }
 
   render(){
