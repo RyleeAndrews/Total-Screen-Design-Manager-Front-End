@@ -67,7 +67,7 @@ export const updateUser = payload => dispatch => {
 };
 
 
-export const authLogout = user => ({
+export const authLogout = () => ({
   type: "DELETE_AUTH_TOKEN",
 });
 

@@ -11,6 +11,7 @@ export default (state=defaultState, action) => {
     return {token: payload.user};
 
   case 'DELETE_AUTH_TOKEN':
+    console.log(defaultState);
     return defaultState;
 
   case "UPDATE_USER": {

@@ -4,11 +4,13 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from './authactions.js';
 import AuthForm from './authform.js';
+import cookie from 'react-cookies';
 
 class AuthDashboard extends React.Component {
   constructor(props){
     super(props);
 
+    this.logoutOf = this.logoutOf.bind(this);
     this.state = {
       init: true,
       signinto: false,
@@ -26,7 +28,14 @@ class AuthDashboard extends React.Component {
     delete(this.stop);
   }
 
+  logoutOf(){
+    cookie.remove('auth', {path: '/'});
+    this.props.authLogout();
+  }
+
+
   render(){
+    console.log(this.state.init);
     if(this.state.init){
       return null;
     }
@@ -43,7 +52,7 @@ class AuthDashboard extends React.Component {
             <Link to="/profile">
               <button type="submit" className="profilebtn"> profile </button>
             </Link>
-            <button type="submit" className="logoutbtn" onClick={this.props.authLogout}> logout </button>
+            <button type="submit" className="logoutbtn" onClick={this.logoutOf}> logout </button>
           </div>
         }
       </div>
