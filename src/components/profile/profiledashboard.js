@@ -75,11 +75,11 @@ class Profile extends React.Component {
           <ProfileForm profileCreate={this.props.profileCreate}/>
           :
           <div>
-            <div className="first"> {this.props.profile.firstname} </div>
+            <div className="first"> {this.state.firstname} </div>
             <br/>
-            <div className="last"> {this.props.profile.lastname} </div>
+            <div className="last"> {this.state.lastname} </div>
             <br />
-            <div className="company"> {this.props.profile.companyname} </div>
+            <div className="company"> {this.state.companyname} </div>
           </div>
         }
       </div>

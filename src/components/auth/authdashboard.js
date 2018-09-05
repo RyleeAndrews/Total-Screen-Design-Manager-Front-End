@@ -11,11 +11,12 @@ class AuthDashboard extends React.Component {
     super(props);
 
     this.logoutOf = this.logoutOf.bind(this);
-    this.state = {
+    let initial = {
       init: true,
       signinto: false,
       signinPage: true,
     };
+    this.state = Object.assign(initial, this.props.profile)
   }
 
   UNSAFE_componentWillMount(){
@@ -48,7 +49,7 @@ class AuthDashboard extends React.Component {
           />
           :
           <div>
-            <p className="signedIn"> signed in as {this.props.profile.firstname} from {this.props.profile.companyname}</p>
+            <p className="signedIn"> signed in as {this.state.firstname} from {this.state.companyname}</p>
             <Link to="/profile">
               <button type="submit" className="profilebtn"> profile </button>
             </Link>
@@ -62,7 +63,6 @@ class AuthDashboard extends React.Component {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  profile: state.profile,
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
