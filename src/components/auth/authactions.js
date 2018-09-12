@@ -56,7 +56,6 @@ export const updateUser = payload => dispatch => {
 
   superagent.put(URL)
     .set('Authorization', "Bearer " + token)
-    .field('username', payload.username)
     .then( res => {
       dispatch(updateUserAction(res.body));
       console.log(res);

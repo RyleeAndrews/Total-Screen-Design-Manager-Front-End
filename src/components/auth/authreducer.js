@@ -26,5 +26,5 @@ export default (state=defaultState, action) => {
   default:
     return state;
 
-}
+  }
 };

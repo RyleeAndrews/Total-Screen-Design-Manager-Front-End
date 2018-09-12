@@ -69,7 +69,6 @@ const updateAction = profile => ({
   payload: profile,
 });
 
-const deleteAction = profile => ({
-  type: 'DELETE',
-  payload: profile,
+export const resetAction = () => ({
+  type: 'RESET',
 });

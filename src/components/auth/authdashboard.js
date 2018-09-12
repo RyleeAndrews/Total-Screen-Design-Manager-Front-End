@@ -3,6 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from './authactions.js';
+import * as profileactions from '../profile/profileactions.js';
 import AuthForm from './authform.js';
 import cookie from 'react-cookies';
 
@@ -11,12 +12,11 @@ class AuthDashboard extends React.Component {
     super(props);
 
     this.logoutOf = this.logoutOf.bind(this);
-    let initial = {
+    this.state = {
       init: true,
       signinto: false,
       signinPage: true,
     };
-    this.state = Object.assign(initial, this.props.profile)
   }
 
   UNSAFE_componentWillMount(){
@@ -32,11 +32,12 @@ class AuthDashboard extends React.Component {
   logoutOf(){
     cookie.remove('auth', {path: '/'});
     this.props.authLogout();
+    this.props.profileReset();
   }
 
 
   render(){
-    console.log(this.state.init);
+    console.log(this.props.auth);
     if(this.state.init){
       return null;
     }
@@ -49,7 +50,7 @@ class AuthDashboard extends React.Component {
           />
           :
           <div>
-            <p className="signedIn"> signed in as {this.state.firstname} from {this.state.companyname}</p>
+            <p className="signedIn"> signed in as {this.props.auth.token.username} from {this.props.auth.token.email}</p>
             <Link to="/profile">
               <button type="submit" className="profilebtn"> profile </button>
             </Link>
@@ -69,6 +70,7 @@ const mapDispatchToProps = (dispatch, getState) => ({
   authLogin: user => dispatch(actions.authLogin(user)),
   authCreate: user => dispatch(actions.authCreateAccount(user)),
   authLogout: () => dispatch(actions.authLogout()),
+  profileReset: () => dispatch(profileactions.resetAction()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthDashboard);

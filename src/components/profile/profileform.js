@@ -1,6 +1,7 @@
 
 import './profile.scss';
 import React from 'react';
+import uuid from 'uuid/v4';
 
 class ProfileForm extends React.Component {
   constructor(props){
@@ -10,6 +11,7 @@ class ProfileForm extends React.Component {
       firstname: '',
       lastname: '',
       companyname: '',
+      profileId: uuid(),
     };
 
     this.state = Object.assign(initialState, this.props.profile);
