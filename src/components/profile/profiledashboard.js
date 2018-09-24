@@ -12,29 +12,28 @@ class Profile extends React.Component {
   constructor(props){
     super(props);
 
-    this.handleImage = this.handleImage.bind(this);
 
     this.state = this.props.profile;
   }
 
+  
 
 
-  handleImage(event){
-    let {files} = event.target;
-    let avatarFile = files[0];
-
-    this.setState({avatarFile});
-
-    photoToDataUrl(avatarFile)
-      .then( preview => {
-        this.setState({preview});
-      })
-      .catch(console.error);
-  }
+  // handleImage(event){
+  //   let {files} = event.target;
+  //   let avatarFile = files[0];
+  //
+  //   this.setState({avatarFile});
+  //
+  //   photoToDataUrl(avatarFile)
+  //     .then( preview => {
+  //       this.setState({preview});
+  //     })
+  //     .catch(console.error);
+  // }
 
   render(){
-    let hasPreview = this.state.preview || undefined;
-    console.log(this.state);
+    console.log('yoooooo', this.props.profile);
     return(
       <div>
         {!this.props.auth.token ?
@@ -136,6 +135,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = ( dispatch, getState ) => ({
   profileCreate: profile => dispatch(actions.profileCreate(profile)),
+  profileLoad: profile => dispatch(actions.profileLoad()),
+  profileInitialize: () => dispatch(actions.profileInitialize()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

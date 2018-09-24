@@ -15,6 +15,9 @@ export default (state=initialState, action) => {
   case 'CREATE':
     return payload;
 
+  case 'SET_PROFILE':
+    return payload;
+    
   case 'UPDATE':
     return Object.assign(state,payload);
 

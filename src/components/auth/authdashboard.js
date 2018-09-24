@@ -32,7 +32,7 @@ class AuthDashboard extends React.Component {
   logoutOf(){
     cookie.remove('auth', {path: '/'});
     this.props.authLogout();
-    this.props.profileReset();
+
   }
 
 
@@ -50,7 +50,7 @@ class AuthDashboard extends React.Component {
           />
           :
           <div>
-            <p className="signedIn"> signed in as {this.props.auth.token.username} from {this.props.auth.token.email}</p>
+            <p className="signedIn"> signed in as {this.props.auth.user.username} from {this.props.auth.user.email}</p>
             <Link to="/profile">
               <button type="submit" className="profilebtn"> profile </button>
             </Link>
@@ -64,13 +64,13 @@ class AuthDashboard extends React.Component {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  profile: state.profile,
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
   authLogin: user => dispatch(actions.authLogin(user)),
   authCreate: user => dispatch(actions.authCreateAccount(user)),
   authLogout: () => dispatch(actions.authLogout()),
-  profileReset: () => dispatch(profileactions.resetAction()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthDashboard);

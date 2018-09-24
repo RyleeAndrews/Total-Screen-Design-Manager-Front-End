@@ -8,15 +8,16 @@ export default (state=defaultState, action) => {
     return {token:payload};
 
   case 'SET_AUTH_USER':
-    return {token: payload.user};
+    return payload;
 
   case 'DELETE_AUTH_TOKEN':
     console.log(defaultState);
     return defaultState;
 
   case "UPDATE_USER": {
-    console.log(state,payload);
-    return Object.assign(state,payload);
+    return {
+      user: payload
+    }
   }
 
   case "DELETE_USER": {
