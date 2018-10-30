@@ -9,7 +9,7 @@ class PastOrders extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {};
+    this.state = this.props.orders;
   }
   render(){
     return(
@@ -48,28 +48,7 @@ class PastOrders extends React.Component {
             <button className="pageBtn3"> Upload Artwork </button>
           </Link>
         </div>
-        <div>
-          <ul>
-            {
-              this.props.orders.map((order,i) =>
-                <li key={order._id} order={order}>
-                  <h3> {order.sizes} </h3>
-                  <h3> {order.individual} </h3>
-                  <h3> {order.company} </h3>
-                  <h3> {order.address} </h3>
-                  <h3> {order.contact} </h3>
-                  <h3> {order.email} </h3>
-                  <h3> {order.style} </h3>
-                  <h3> {order.supplier} </h3>
-                  <h3> {order.quantity} </h3>
-                  <h3> {order.color} </h3>
-                  <h3> {order.placement} </h3>
-                  <h3> {order.inkColor} </h3>
-                </li>
-              )
-            }
-          </ul>
-        </div>
+        <div> {this.props.orders.sizes} </div>
       </div>
     );
   }

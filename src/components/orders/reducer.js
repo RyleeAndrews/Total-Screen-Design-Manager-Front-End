@@ -1,6 +1,6 @@
 'use strict';
 
-let initialState = [];
+let initialState = {};
 
 export default (state=initialState, action) => {
 
@@ -13,13 +13,13 @@ export default (state=initialState, action) => {
 
   case 'ORDER_CREATE':
     console.log('payload', payload);
-    return [...state, payload];
+    return payload;
 
   case 'ORDER_UPDATE':
-    return state.map(order => order._id === payload._id ? payload : order);
+    return Object.assign(state,payload);
 
   case 'ORDER_DELETE':
-    return state.filter(order => order._id !== payload);
+    return initialState;
 
   case 'ORDER_RESET':
     return initialState;

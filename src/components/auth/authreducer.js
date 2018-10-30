@@ -16,8 +16,8 @@ export default (state=defaultState, action) => {
 
   case "UPDATE_USER": {
     return {
-      user: payload
-    }
+      user: payload,
+    };
   }
 
   case "DELETE_USER": {

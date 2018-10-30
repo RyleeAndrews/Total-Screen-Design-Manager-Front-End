@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin');
 
 #username {
-  font-size: 1.2em;
+  font-size: 100%;
   color: black;
-  margin-left: 20%;
 }
 
 #signUpPassword {
-  font-size: 1.2em;
+  font-size: 100%;
   color: black;
-  margin-left: 17%;
 }
 
 .signBtn {
@@ -27,4 +25,8 @@
 
 .logoutbtn {
   margin-left: 80%;
+}
+
+.signupForm {
+  opacity: 1;
 }

@@ -20,8 +20,8 @@ class AuthDashboard extends React.Component {
   }
 
   UNSAFE_componentWillMount(){
-    this.stop = this.props.authLogin()
-      .then( () => this.setState({init: false}));
+    this.props.authLogin()
+    this.setState({init: false});
 
   }
 
