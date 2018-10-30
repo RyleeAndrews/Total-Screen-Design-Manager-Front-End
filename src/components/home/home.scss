@@ -32,7 +32,7 @@
 .tsdhead {
   text-align: center;
   color: #09990F;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   float: right;
   margin-right: 40%;
 }
@@ -49,13 +49,17 @@
 .loggedIn {
   float: right;
   margin-left: 37%;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .wrapper {
   width: 100%;
-  margin-top: 10%;
-  background-color: rgba(128, 155, 171, .1);
-  height: 60vh;
+  margin-top: 1%;
+  background-color: rgba(15, 190, 226, .1);
+  height: 50vh;
+  -webkit-box-shadow: 0 0 10px rgba(38,37,38, 0.4);
+  box-shadow: 0 0 30px rgba(38,37,38, 0.4);
+  border-radius: 8px;
 }
 
 .homephoto {
@@ -67,13 +71,136 @@
   -webkit-box-shadow: 0 0 10px rgba(38,37,38, 0.4);
   box-shadow: 0 0 30px rgba(38,37,38, 0.4);
   opacity: .7;
-  margin-top: 4.5%;
+  margin-top: 2.5%;
 }
 
 .homephoto:hover {
   opacity: .3;
 }
 
+.homephoto2 {
+  display: inline-block;
+  width: 35%;
+  margin-left: 10%;
+  height: 150px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px rgba(38,37,38, 0.4);
+  box-shadow: 0 0 30px rgba(38,37,38, 0.4);
+  opacity: .7;
+  margin-top: 2.5%;
+}
+
+.homephoto2:hover {
+  opacity: .3;
+}
+
+.homephoto3 {
+  display: inline-block;
+  width: 25%;
+  margin-left: 6.25%;
+  height: 150px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px rgba(38,37,38, 0.4);
+  box-shadow: 0 0 30px rgba(38,37,38, 0.4);
+  opacity: .7;
+  margin-top: 2.5%;
+}
+
+.homephoto3:hover {
+  opacity: .3;
+}
+
+.services {
+  height: 50vh;
+  background-color: rgba(9, 153, 15, .1);
+  margin-top: 2%;
+  -webkit-box-shadow: 0 0 10px rgba(38,37,38, 0.4);
+  box-shadow: 0 0 30px rgba(38,37,38, 0.4);
+  border-radius: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.products {
+  width: 100%;
+  border-radius: 8px;
+  height: 5%;
+  background-color: rgba(2, 21, 25, .7);
+  color: white;
+  font-family: 'Nunito Sans', sans-serif;
+  text-align: center;
+  margin-top: 1%;
+}
+
+.servicebar {
+  width: 100%;
+  border-radius: 8px;
+  height: 5%;
+  background-color: rgba(2, 21, 25, .7);
+  color: white;
+  font-family: 'Nunito Sans', sans-serif;
+  text-align: center;
+  margin-top: 1%;
+}
+
+.servicewords1 {
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  position: absolute;
+  top: 26%;
+  left: 27%;
+  transform: translate(-50%, -50%);
+  font-size: 180%;
+  color: white;
+}
+
+.servicewords2 {
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  position: absolute;
+  top: 26%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+  font-size: 180%;
+  color: white;
+}
+
+.servicewords3 {
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  position: absolute;
+  top: 72.5%;
+  left: 18.5%;
+  transform: translate(-50%, -50%);
+  font-size: 180%;
+  color: white;
+}
+
+.servicewords4 {
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  position: absolute;
+  top: 72.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 180%;
+  color: white;
+}
+
+.servicewords5 {
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  position: absolute;
+  top: 72.5%;
+  left: 81.25%;
+  transform: translate(-50%, -50%);
+  font-size: 180%;
+  color: white;
+}
+
+.small {
+  font-size:  70%;
+}
 /* Dropdown Button */
 .dropbtn {
     height: 50px;
@@ -83,6 +210,7 @@
     padding: 16px;
     font-size: 16px;
     border: none;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .dropbtn:focus, .dropbtn:active, .dropbtn.active, .dropbtn:focus:active {

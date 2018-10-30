@@ -3,11 +3,13 @@
 #username {
   font-size: 100%;
   color: black;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 #signUpPassword {
   font-size: 100%;
   color: black;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .signBtn {
@@ -29,4 +31,8 @@
 
 .signupForm {
   opacity: 1;
+}
+
+button {
+  font-family: 'Nunito Sans', sans-serif;
 }

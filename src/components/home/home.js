@@ -66,6 +66,7 @@ class Home extends React.Component {
             :
             null
         }
+        <div className="products"> We carry these quality brands plus more! <div className="small">(Click on photo to see brands catalog) </div> </div>
         {
           this.even() === 1 ?
             <div className="wrapper">
@@ -86,6 +87,19 @@ class Home extends React.Component {
               <img className="homephoto" src={require('./gildan.png')} />
             </div>
         }
+        <div className="servicebar"> The services we offer! <div className="small"> (Click on the photo to learn more about services) </div> </div>
+        <div className="services">
+          <img className="homephoto2" src={require('./screenprint.png')} />
+          <div className="servicewords1"> Screen Print </div>
+          <img className="homephoto2" src={require('./embroidery.png')} />
+          <div className="servicewords2"> Embroidery </div>
+          <img className="homephoto3" src={require('./dtg.png')} />
+          <div className="servicewords3"> Direct To Garment </div>
+          <img className="homephoto3" src={require('./vinyl.png')} />
+          <div className="servicewords4"> Vinyl Printing </div>
+          <img className="homephoto3" src={require('./graphic.png')} />
+          <div className="servicewords5"> Graphic Design </div>
+        </div>
       </div>
     );
   }
