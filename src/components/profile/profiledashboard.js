@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import * as actions from './profileactions.js';
 import {renderIf, photoToDataUrl} from '../../lib/helperLib.js';
 import ProfileForm from './profileform.js';
+import EditProfile from './editProfile.js';
 
 
 class Profile extends React.Component {
@@ -16,108 +17,69 @@ class Profile extends React.Component {
     this.state = this.props.profile;
   }
 
-  
-
-
-  // handleImage(event){
-  //   let {files} = event.target;
-  //   let avatarFile = files[0];
-  //
-  //   this.setState({avatarFile});
-  //
-  //   photoToDataUrl(avatarFile)
-  //     .then( preview => {
-  //       this.setState({preview});
-  //     })
-  //     .catch(console.error);
-  // }
+  componentDidUpdate(prevProps){
+    if(this.props.profile !== prevProps.profile){
+      console.log(prevProps);
+      this.setState(this.props.profile);
+    }
+  }
 
   render(){
     console.log('yoooooo', this.props.profile);
     return(
       <div>
         {!this.props.auth.token ?
-          <div>
-            <div className="head1">
-              <h1 className="word1"> Total Screen Design </h1>
-              <div className="btnHead">
-                <Link to="/">
-                  <button className="pageBtn2"> Home </button>
-                </Link>
-                <Link to="/about">
-                  <button className="pageBtn2"> About </button>
-                </Link>
-                <Link to="/contact">
-                  <button className="pageBtn2"> Contact </button>
-                </Link>
-              </div>
-              <div className="auth">
-                <AuthDashboard className="authDash"/>
-              </div>
-            </div>
-            <div className="btnProfile">
-              <Link to="/profile">
-                <button className="pageBtn3"> Profile </button>
-              </Link>
-              <Link to="/editprofile">
-                <button className="pageBtn3"> Edit Profile </button>
-              </Link>
-              <Link to="/order">
-                <button className="pageBtn3"> Order </button>
-              </Link>
-              <Link to="/pastorders">
-                <button className="pageBtn3"> Past Orders </button>
-              </Link>
-              <Link to="/uploadartwork">
-                <button className="pageBtn3"> Upload Artwork </button>
-              </Link>
-            </div>
+          <div className="auth">
+            <AuthDashboard className="authDash"/>
           </div>
           : (
             <div>
-              <div className="head1">
-                <h1 className="word1"> Total Screen Design </h1>
+              <div className="head">
+                <h1 className="tsdhead"> Total Screen Design </h1>
                 <div className="btnHead">
                   <Link to="/">
-                    <button className="pageBtn2"> Home </button>
+                    <button className="pageBtn"> Home </button>
                   </Link>
                   <Link to="/about">
-                    <button className="pageBtn2"> About </button>
+                    <button className="pageBtn"> About </button>
                   </Link>
                   <Link to="/contact">
-                    <button className="pageBtn2"> Contact </button>
+                    <button className="pageBtn"> Contact </button>
                   </Link>
+                  <div className="dropdown">
+                    <button className="pageBtn"> Catalog </button>
+                    <div className="dropdown-content">
+                      <a href="https://www.companycasuals.com/totalscreendesign/start.jsp" rel="noopener noreferrer"
+                        target="_blank"> Catalog 1</a>
+                      <a href="http://www.4logowearables.com/cgi-bin/hw/hwb/chw-browse-brand.w?hwCN=197208212203201210201214205199187201198215205216201&hwCNCD=&hwST=1"
+                        rel="noopener noreferrer" target="_blank"> Catalog 2</a>
+                    </div>
+                  </div>
                 </div>
-                <div className="auth">
-                  <AuthDashboard className="authDash"/>
+                <div className="authpro">
+                signed in as {this.props.auth.user.username}
                 </div>
-              </div>
-              <div className="btnProfile">
-                <Link to="/profile">
-                  <button className="pageBtn3"> Profile </button>
-                </Link>
-                <Link to="/editprofile">
-                  <button className="pageBtn3"> Edit Profile </button>
-                </Link>
-                <Link to="/order">
-                  <button className="pageBtn3"> Order </button>
-                </Link>
-                <Link to="/pastorders">
-                  <button className="pageBtn3"> Past Orders </button>
-                </Link>
-                <Link to="/uploadartwork">
-                  <button className="pageBtn3"> Upload Artwork </button>
-                </Link>
               </div>
               {!this.props.profile.firstname ?
-                <ProfileForm profileCreate={this.props.profileCreate}/>
+                <div className="formcontain">
+                  <div className="profileformwords">
+                    Add your profile information
+                  </div>
+                  <ProfileForm profileCreate={this.props.profileCreate}/>
+                </div>
                 :
-                <div>
-                  <div className="first"> {this.props.profile.firstname} </div>
-                  <br/>
-                  <div className="last"> {this.props.profile.lastname} </div>
-                  <br />
-                  <div className="company"> {this.props.profile.companyname} </div>
+                <div className="containall">
+                  <div className="containname">
+                    <div className="user"> Your user info </div>
+                    <div className="first"> {this.props.profile.firstname} </div>
+                    <br/>
+                    <div className="last"> {this.props.profile.lastname} </div>
+                    <br />
+                    <div className="company"> {this.props.profile.companyname} </div>
+                  </div>
+                  <div className="containedit">
+                    <EditProfile/>
+                  </div>
                 </div>
               }
             </div>

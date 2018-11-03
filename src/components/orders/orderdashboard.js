@@ -14,23 +14,63 @@ class OrderDashboard extends React.Component {
   render(){
     return(
       <div>
-        <div className="head1">
-          <h1 className="word1"> Total Screen Design </h1>
-          <div className="btnHead">
-            <Link to="/">
-              <button className="pageBtn2"> Home </button>
-            </Link>
-            <Link to="/about">
-              <button className="pageBtn2"> About </button>
-            </Link>
-            <Link to="/contact">
-              <button className="pageBtn2"> Contact </button>
-            </Link>
+        {this.props.auth.token ?
+          <div className="head">
+            <h1 className="tsdhead"> Total Screen Design </h1>
+            <div className="btnHead">
+              <Link to="/">
+                <button className="pageBtn"> Home </button>
+              </Link>
+              <Link to="/about">
+                <button className="pageBtn"> About </button>
+              </Link>
+              <Link to="/contact">
+                <button className="pageBtn"> Contact </button>
+              </Link>
+              <div className="dropdown">
+                <button className="pageBtn"> Catalog </button>
+                <div className="dropdown-content">
+                  <a href="https://www.companycasuals.com/totalscreendesign/start.jsp" rel="noopener noreferrer"
+                    target="_blank"> Catalog 1</a>
+                  <a href="http://www.4logowearables.com/cgi-bin/hw/hwb/chw-browse-brand.w?hwCN=197208212203201210201214205199187201198215205216201&hwCNCD=&hwST=1"
+                    rel="noopener noreferrer" target="_blank"> Catalog 2</a>
+                </div>
+              </div>
+              <div className="authy">
+                signed in as {this.props.auth.user.username}
+              </div>
+            </div>
           </div>
-          <div className="auth">
-            <AuthDashboard className="authDash"/>
+          :
+          <div>
+            <div>
+              <AuthDashboard />
+            </div>
+            <div className="head">
+              <h1 className="tsdhead"> Total Screen Design </h1>
+              <div className="btnHead">
+                <Link to="/">
+                  <button className="pageBtn"> Home </button>
+                </Link>
+                <Link to="/about">
+                  <button className="pageBtn"> About </button>
+                </Link>
+                <Link to="/contact">
+                  <button className="pageBtn"> Contact </button>
+                </Link>
+                <div className="dropdown">
+                  <button className="pageBtn"> Catalog </button>
+                  <div className="dropdown-content">
+                    <a href="https://www.companycasuals.com/totalscreendesign/start.jsp" rel="noopener noreferrer"
+                      target="_blank"> Catalog 1</a>
+                    <a href="http://www.4logowearables.com/cgi-bin/hw/hwb/chw-browse-brand.w?hwCN=197208212203201210201214205199187201198215205216201&hwCNCD=&hwST=1"
+                      rel="noopener noreferrer" target="_blank"> Catalog 2</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        }
         <div className="btnProfile">
           <Link to="/profile">
             <button className="pageBtn3"> Profile </button>
@@ -56,6 +96,7 @@ class OrderDashboard extends React.Component {
 
 const mapStateToProps = (state) => ({
   orders: state.orders,
+  auth: state.auth,
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({

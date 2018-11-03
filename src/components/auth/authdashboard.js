@@ -49,8 +49,8 @@ class AuthDashboard extends React.Component {
             signUp={this.props.authCreate}
           />
           :
-          <div>
-            <p className="signedIn"> signed in as {this.props.auth.user.username} from {this.props.auth.user.email}</p>
+          <div className="authy">
+            <p className="signedIn"> signed in as {this.props.auth.user.username}</p>
             <Link to="/profile">
               <button type="submit" className="profilebtn"> profile </button>
             </Link>

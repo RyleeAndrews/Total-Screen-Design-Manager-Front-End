@@ -62,6 +62,9 @@ class Home extends React.Component {
             this.props.auth.token ?
               <div className="loggedIn">
                 signed in as {this.props.auth.user.username}
+                <Link to="/profile">
+                  <button type="submit"> Profile </button>
+                </Link>
               </div>
               :
               null

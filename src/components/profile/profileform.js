@@ -44,14 +44,14 @@ class ProfileForm extends React.Component {
   render(){
     return(
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label id="firstname"> your first name </label>
+        <form className="profileform" onSubmit={this.handleSubmit}>
+          <label id="firstname"> first name </label>
           <input htmlFor="firstname" value={this.state.firstname} onChange={this.onChangeOfFirstname} />
           <br/>
-          <label id="lastname"> your last name </label>
+          <label id="lastname"> last name </label>
           <input htmlFor="lastname" value={this.state.lastname} onChange={this.onChangeOfLastname} />
           <br />
-          <label id="companyname"> your company name </label>
+          <label id="companyname"> company name </label>
           <input htmlFor="companyname" value={this.state.companyname} onChange={this.onChangeOfCompanyname} />
           <br />
           <button type="submit"> submit </button>

@@ -1,54 +1,92 @@
-@import url('https://fonts.googleapis.com/css?family=Cabin');
-.head1 {
-  height: 250px;
+.head {
+  height: 100px;
+  display: inline-block;
   width: 100%;
-  background-color: #1A1B1C;
 }
 
-.word1 {
-  color: #09990F;
-  text-align: center;
-  padding-top: 65px;
-}
-
-.btnHead2 {
-  float: left;
-  left: 0%;
-  margin-right: 90%;
-  height: 36px;
+.btnHead {
   width: 25%;
-  opacity: .5;
 }
 
-.pageBtn2 {
+.authpro {
+  text-decoration: underline;
+  margin-left: 85%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 120%;
+}
+.pageBtn {
   float: left;
   height: 46px;
   width: 25%;
   display: inline-block;
-  background-color: #1A1B1C;
   font-size: 1em;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   border: none;
-  color: white;
+  color: black;
 }
 
-.pageBtn2:focus, .pageBtn2:active, .pageBtn2.active, .pageBtn2:focus:active {
+.pageBtn:hover {
+  opacity: .4;
+}
+
+.pageBtn:focus, .pageBtn:active, .pageBtn.active, .pageBtn:focus:active {
   background-image: none;
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
+.tsdhead {
+  text-align: center;
+  color: rgba(9, 153, 15, .7);
+  font-family: 'Nunito Sans', sans-serif;
+  float: right;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 150%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
 #firstname {
-  font-size: 2em;
+  font-size: 180%;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 #lastname {
-  font-size: 2em;
+  font-size: 180%;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 3%;
 }
 
 #companyname {
-  font-size: 2em;
+  font-size: 180%;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .first {
@@ -64,21 +102,25 @@
 }
 
 .btnProfile {
-  height: 50px;
-  background-color: #1A1B1C;
+  height: 100px;
+  background-color: rgba(0, 0, 0, .3);
   margin-top: .5%;
+  border-radius: 8px;
 }
 
 .pageBtn3 {
   margin-left: 5%;
   border: none;
-  padding-top: .25%;
+  padding-top: 2.5%;
   font-size: 1em;
   height: 50px;
-  background-color: #1A1B1C;
-  color: white;
-  font-family: 'Cabin', sans-serif;
-  opacity: .5;
+  color: rgba(9, 153, 15, .9);
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.pageBtn3:hover {
+  opacity: .3;
 }
 
 .pageBtn3:focus, .pageBtn3:active, .pageBtn3.active, .pageBtn3:focus:active {
@@ -86,6 +128,23 @@
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.formcontain {
+  width: 100%;
+  height: 50vh;
+
+}
+
+.profileformwords {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 200%;
+  text-align: center;
+}
+
+.profileform {
+  margin-left: 42%;
+  margin-top: 3%;
 }
 
 .infoProfile {
@@ -97,6 +156,30 @@
 .profileWrapper {
   width: 100vw;
   height: 80vh;
-  background-color: grey;
   margin-top: 1.5%;
+}
+
+.containall {
+  height: 85vh;
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: 8px;
+  margin-top: 1%;
+  -webkit-box-shadow: 0 0 10px rgba(38,37,38, 0.4);
+  box-shadow: 0 0 30px rgba(38,37,38, 0.4);
+  display: inline-block;
+  width: 100%;
+}
+
+.containname {
+  width: 30%;
+  border: 1px solid black;
+  height: 42.5vh;
+  border-radius: 10px;
+}
+
+.containedit {
+  width: 30%;
+  border: 1px solid black;
+  height: 42.5vh;
+  border-radius: 10px;
 }
