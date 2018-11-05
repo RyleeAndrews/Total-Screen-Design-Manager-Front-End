@@ -7,25 +7,37 @@ class Home extends React.Component {
   constructor(props){
     super(props);
 
-    this.clearIntervalSet = this.clearIntervalSet.bind(this);
+
     this.nextSlide = this.nextSlide.bind(this);
-    this.even = this.even.bind(this);
+    this.timerSlide = this.timerSlide.bind(this);
+    this.stopTimer = this.stopTimer.bind(this);
+    this.previousSlide = this.previousSlide.bind(this);
+    this.restart = this.restart.bind(this);
+    this.endRestart = this.endRestart.bind(this);
+
     this.state = {
       slideCount: 1,
     };
   }
 
-  UNSAFE_componentWillMount(){
+  timerSlide(){
     this.timer = setInterval(this.nextSlide, 4000);
   }
 
-  clearIntervalSet(){
+  restart(){
+    this.timer2 = setInterval(this.previousSlide,4000);
+  }
+
+  stopTimer(){
     clearInterval(this.timer);
   }
 
-  even(slideCounty){
-    slideCounty = this.state.slideCount;
-    return slideCounty%2;
+  endRestart(){
+    clearInterval(this.timer2);
+  }
+
+  previousSlide(){
+    this.setState({slideCount: this.state.slideCount - 1});
   }
 
   nextSlide() {
@@ -80,60 +92,74 @@ class Home extends React.Component {
         }
         <div className="products"> We carry these quality brands plus more! <div className="small">(Click on photo to view brand&#39;s catalog) </div> </div>
         {
-          this.even() === 1 ?
-            <div className="wrapper">
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Bella%20%2B%20Canvas&ln=brands-b_18"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./bellacan.png')} />
-              </a>
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=District&ln=brands-b_4"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./district-made.png')} />
-              </a>
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Port%20%26%20Company&ln=brands-b_1"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./pnc.png')} />
-              </a>
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Alternative%20Apparel&ln=brands-b_16"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./alty.png')} />
-              </a>
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Fruit%20of%20the%20Loom&ln=brands-b_24"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./fruitofloom.png')} />
-              </a>
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Nike&ln=brands-b_9"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./nikee.png')} />
-              </a>
+          this.state.slideCount === 1 ?
+            <div>
+              {this.endRestart()}
+              {this.timerSlide()}
+              <div className="wrapper">
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Bella%20%2B%20Canvas&ln=brands-b_18"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./bellacan.png')} />
+                </a>
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=District&ln=brands-b_4"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./district-made.png')} />
+                </a>
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Port%20%26%20Company&ln=brands-b_1"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./pnc.png')} />
+                </a>
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Alternative%20Apparel&ln=brands-b_16"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./alty.png')} />
+                </a>
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Fruit%20of%20the%20Loom&ln=brands-b_24"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./fruitofloom.png')} />
+                </a>
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Nike&ln=brands-b_9"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./nikee.png')} />
+                </a>
+              </div>
             </div>
             :
-            <div className="wrapper">
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Port%20Authority&ln=brands-b_0"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./port-authority.png')} />
-              </a>
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Eddie%20Bauer&ln=brands-b_13"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./eddie.png')} />
-              </a>
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=New%20Era&ln=brands-b_15"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./newera.png')} />
-              </a>
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=OGIO&ln=brands-b_12"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./ogio.png')} />
-              </a>
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Sport-Tek&ln=brands-b_2"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./sport-tek.png')} />
-              </a>
-              <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Gildan&ln=brands-b_23"
-                rel="noopener noreferrer" target="_blank">
-                <img className="homephoto" src={require('./gildan.png')} />
-              </a>
+            null
+        }
+        {
+          this.state.slideCount === 2 ?
+            <div>
+              {this.stopTimer()}
+              {this.restart()}
+              <div className="wrapper">
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Port%20Authority&ln=brands-b_0"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./port-authority.png')} />
+                </a>
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Eddie%20Bauer&ln=brands-b_13"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./eddie.png')} />
+                </a>
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=New%20Era&ln=brands-b_15"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./newera.png')} />
+                </a>
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=OGIO&ln=brands-b_12"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./ogio.png')} />
+                </a>
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Sport-Tek&ln=brands-b_2"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./sport-tek.png')} />
+                </a>
+                <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Gildan&ln=brands-b_23"
+                  rel="noopener noreferrer" target="_blank">
+                  <img className="homephoto" src={require('./gildan.png')} />
+                </a>
+              </div>
             </div>
+            :
+            null
         }
         <div className="servicebar"> The services we offer!
           <div className="small">
