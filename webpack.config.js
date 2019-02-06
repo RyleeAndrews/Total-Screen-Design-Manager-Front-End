@@ -57,6 +57,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+          plugins: ['transform-es2015-arrow-functions'],
+        },
       },
       {
         test: /\.(mov|mp4)$/,
