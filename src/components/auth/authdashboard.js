@@ -32,7 +32,7 @@ class AuthDashboard extends React.Component {
   logoutOf(){
     cookie.remove('auth', {path: '/'});
     this.props.authLogout();
-
+    location.reload();
   }
 
 

@@ -14,6 +14,16 @@
   font-family: 'Nunito Sans', sans-serif;
   font-size: 120%;
 }
+
+.auth {
+  margin-left: 39.5%;
+  margin-top: 5%;
+  font-size: 150%;
+  border: 1px solid black;
+  width: 9.5%;
+  padding: 5%;
+}
+
 .pageBtn {
   float: left;
   height: 46px;
@@ -159,27 +169,26 @@
   margin-top: 1.5%;
 }
 
-.containall {
-  height: 85vh;
-  background-color: rgba(0, 0, 0, .2);
-  border-radius: 8px;
-  margin-top: 1%;
-  -webkit-box-shadow: 0 0 10px rgba(38,37,38, 0.4);
-  box-shadow: 0 0 30px rgba(38,37,38, 0.4);
-  display: inline-block;
-  width: 100%;
-}
-
 .containname {
   width: 30%;
   border: 1px solid black;
-  height: 42.5vh;
+  height: 81vh;
   border-radius: 10px;
 }
 
-.containedit {
-  width: 30%;
-  border: 1px solid black;
-  height: 42.5vh;
-  border-radius: 10px;
+.profileBody {
+  margin-top: 3%;
+  height: 81vh;
+  background-color: rgba(15, 190, 226, .1);
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px rgba(38,37,38, 0.4);
+  box-shadow: 0 0 30px rgba(38,37,38, 0.4);
+}
+
+.editBtn {
+  margin-left: 59.5%;
+}
+
+.input2 {
+  font-size: 200%;
 }

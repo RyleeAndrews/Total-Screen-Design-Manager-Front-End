@@ -47,12 +47,18 @@ class EditProfile extends React.Component {
     console.log(this.props.profile);
     return(
       <form onSubmit={this.handleUpdate}>
-        edit your company name:
-        <input value={this.state.companyname} onChange={this.handleChangeOfCompanyName} />
-        edit your first name:
-        <input value={this.state.firstname} onChange={this.handleChangeOfFirstName} />
-        edit your last name:
-        <input value={this.state.lastname} onChange={this.handleChangeOfLastName} />
+        <h2> edit your company name: </h2>
+        <br/>
+        <input className="input2" value={this.state.companyname} onChange={this.handleChangeOfCompanyName} />
+        <br/>
+        <h2> edit your first name: </h2>
+        <br/>
+        <input className="input2" value={this.state.firstname} onChange={this.handleChangeOfFirstName} />
+        <br/>
+        <h2> edit your last name: </h2>
+        <br/>
+        <input className="input2" value={this.state.lastname} onChange={this.handleChangeOfLastName} />
+        <br/>
         <button type="submit"> submit </button>
       </form>
     );
