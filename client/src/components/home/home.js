@@ -7,13 +7,6 @@ class Home extends React.Component {
   constructor(props){
     super(props);
 
-
-    this.nextSlide = this.nextSlide.bind(this);
-    this.timerSlide = this.timerSlide.bind(this);
-    this.stopTimer = this.stopTimer.bind(this);
-    this.previousSlide = this.previousSlide.bind(this);
-
-
     this.state = {
       slideCount: 1,
       interval: setInterval(this.nextSlide,4000),
@@ -21,20 +14,22 @@ class Home extends React.Component {
   }
 
 
-  clear = () => {
-    clearInterval(this.state.interval);
+
+  previousSlide = () => {
+    this.setState({slideCount: this.state.slideCount - 2})
   }
 
-  previousSlide(){
-    this.setState({slideCount: this.state.slideCount - 1});
+  setTime = () => {
+    setTimeout(this.previousSlide, 1000)
   }
 
-  nextSlide() {
-    this.setState({ slideCount: this.state.slideCount + 1 });
+  nextSlide = () => {
+    this.setState({slideCount: this.state.slideCount + 1})
   }
-
   render(){
+
     console.log(this.state.slideCount);
+
     return(
       <div>
         {
@@ -66,13 +61,14 @@ class Home extends React.Component {
                   </div>
                 </div>
               </div>
-              <AuthDashboard />
+              <div>
+                Logged in as {this.props.auth.token.username}
+              </div>
               <div className="products"> <p className="pProduct"> We carry these quality brands plus more! </p><div className="small">(Click on photo to view brand&#39;s catalog) </div> </div>
               {
                 this.state.slideCount === 1 ?
                   <div>
 
-                    {this.timerSlide()}
                     <div className="wrapper">
                       <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Bella%20%2B%20Canvas&ln=brands-b_18"
                         rel="noopener noreferrer" target="_blank">
@@ -106,7 +102,7 @@ class Home extends React.Component {
               {
                 this.state.slideCount === 2 ?
                   <div>
-                    {this.stopTimer()}
+
 
                     <div className="wrapper">
                       <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Port%20Authority&ln=brands-b_0"
@@ -137,6 +133,41 @@ class Home extends React.Component {
                   </div>
                   :
                   null
+              }{
+                this.state.slideCount === 3 ?
+                <div>
+
+
+                  <div className="wrapper">
+                    <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Port%20Authority&ln=brands-b_0"
+                      rel="noopener noreferrer" target="_blank">
+                      <img className="homephoto" src={require('./port-authority.png')} />
+                    </a>
+                    <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Eddie%20Bauer&ln=brands-b_13"
+                      rel="noopener noreferrer" target="_blank">
+                      <img className="homephoto" src={require('./eddie.png')} />
+                    </a>
+                    <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=New%20Era&ln=brands-b_15"
+                      rel="noopener noreferrer" target="_blank">
+                      <img className="homephoto" src={require('./newera.png')} />
+                    </a>
+                    <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=OGIO&ln=brands-b_12"
+                      rel="noopener noreferrer" target="_blank">
+                      <img className="homephoto" src={require('./ogio.png')} />
+                    </a>
+                    <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Sport-Tek&ln=brands-b_2"
+                      rel="noopener noreferrer" target="_blank">
+                      <img className="homephoto" src={require('./sport-tek.png')} />
+                    </a>
+                    <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Gildan&ln=brands-b_23"
+                      rel="noopener noreferrer" target="_blank">
+                      <img className="homephoto" src={require('./gildan.png')} />
+                    </a>
+                  </div>
+                  {this.setTime()}
+                </div>
+                :
+                null
               }
               <div className="servicebar"> The services we offer!
                 <div className="small">
@@ -259,7 +290,7 @@ class Home extends React.Component {
               {
                 this.state.slideCount === 1 ?
                   <div>
-                    {this.timerSlide()}
+
                     <div className="wrapper">
                       <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Bella%20%2B%20Canvas&ln=brands-b_18"
                         rel="noopener noreferrer" target="_blank">
@@ -293,7 +324,7 @@ class Home extends React.Component {
               {
                 this.state.slideCount === 2 ?
                   <div>
-                    {this.stopTimer()}
+
                     <div className="wrapper">
                       <a href="https://www.companycasuals.com/totalscreendesign/b.jsp?brand=Port%20Authority&ln=brands-b_0"
                         rel="noopener noreferrer" target="_blank">
